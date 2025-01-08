@@ -1,0 +1,20 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+
+BEGIN
+
+CALL var();
+
+RETURN TRUE;
+
+END;
+
+CREATE PROCEDURE var() BEGIN
+
+DECLARE Insert_data CHARACTER;
+
+SET Insert_data ='INSERT INTO SCH VALUES(''RAM'')';
+
+PASSTHRU(Insert_data);
+
+END;
+

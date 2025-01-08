@@ -1,0 +1,11 @@
+CREATE PROCEDURE calldb (
+    IN appname CHARACTER,
+    IN mfname CHARACTER,
+    IN logtime TIMESTAMP,
+    IN payload CHARACTER,
+    IN logtype CHARACTER,
+    IN logpoint CHARACTER,
+    IN referenceno CHARACTER
+)
+LANGUAGE DATABASE
+EXTERNAL NAME DBLOGGINGPRO;

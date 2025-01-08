@@ -1,0 +1,81 @@
+CREATE COMPUTE MODULE task5_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		-- CALL CopyMessageHeaders();
+		 CALL CopyEntireMessage();
+		RETURN TRUE;
+	END;
+
+	CREATE PROCEDURE CopyMessageHeaders() BEGIN
+		DECLARE I INTEGER 1;
+		DECLARE J INTEGER;
+		SET J = CARDINALITY(InputRoot.*[]);
+		WHILE I < J DO
+			SET OutputRoot.*[I] = InputRoot.*[I];
+			SET I = I + 1;
+		END WHILE;
+	END;
+ /* . Take input as json and generate the below response in XML format.
+
+{
+  "data": [{
+    "type": "articles",
+    "id": "1",
+    "attributes": {
+      "title": "JSON:API paints my bikeshed!",
+      "body": "The shortest article. Ever.",
+      "created": "2015-05-22T14:56:29.000Z",
+      "updated": "2015-05-22T14:56:28.000Z"
+    },
+    "relationships": {
+      "author": {
+        "data": {
+        "id": "42", 
+        "type": "people"
+        }
+      }
+    }
+  }],
+  "included": [
+    {
+      "type": "people",
+      "id": "42",
+      "attributes": {
+        "name": "John",
+        "age": 80,
+        "gender": "male"
+      }
+    }
+  ]
+}
+ */	CREATE PROCEDURE CopyEntireMessage() BEGIN
+		
+		
+		-- declare var REFERENCE TO OutputRoot.XMLNSC.data.Item[];
+		
+		--var.type='articles';
+		
+		
+		SET OutputRoot.XMLNSC.result.data.type = 'articles';
+		SET OutputRoot.XMLNSC.result.data.id='1';
+		set OutputRoot.XMLNSC.result.data.attributes.title='JSON:API paints my bikeshed!';
+		set OutputRoot.XMLNSC.result.data.attributes.body='The shortest article. Ever.';
+		set OutputRoot.XMLNSC.result.data.attributes.created='2015-05-22T14:56:29.000Z';
+		set OutputRoot.XMLNSC.result.data.attributes.updated='2015-05-22T14:56:28.000Z';
+		
+		-- set OutputRoot.XMLNSC.result.data.relationships.author.data=';
+		set OutputRoot.XMLNSC.result.data.relationships.author.data.id= 'id : 42 ';
+		set OutputRoot.XMLNSC.result.data.relationships.author.data.type= 'type: people';
+	
+		SET OutputRoot.XMLNSC.result.included.type='people';
+		SET OutputRoot.XMLNSC.result.included.id ='42';
+		SET OutputRoot.XMLNSC.result.included.attributes.name='json';
+		SET OutputRoot.XMLNSC.result.included.attributes.age='80';
+		SET OutputRoot.XMLNSC.result.included.attributes.gender='male';
+		
+		DECLARE REF REFERENCE TO OutputRoot.XMLNSC.result.data;
+		
+		--set OutputRoot.XMLNSC= InputRoot.JSON.Data.data;
+		-- set OutputRoot=InputRoot;
+	END;
+END MODULE;

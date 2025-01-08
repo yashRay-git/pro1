@@ -1,0 +1,23 @@
+CREATE DATABASE MODULE  database_n0de_flow_Database
+
+CREATE FUNCTION Main() RETURNS BOOLEAN
+
+BEGIN
+
+CALL var();
+
+RETURN TRUE;
+
+END;
+
+CREATE PROCEDURE var() BEGIN
+
+DECLARE Insert_data CHARACTER;
+
+SET Insert_data ='INSERT INTO DATANODE VALUES(5,''RAM'')';
+
+PASSTHRU(Insert_data);
+
+END;
+
+END MODULE;

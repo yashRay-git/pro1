@@ -1,0 +1,21 @@
+CREATE COMPUTE MODULE ProcessFileWithSequence
+    CREATE FUNCTION Main() RETURNS BOOLEAN
+    BEGIN
+        -- Copy input message to output
+        CALL CopyEntireMessage();
+        
+        -- Access the sequence number from the local environment
+        DECLARE seqNum INTEGER;
+        SET seqNum = InputLocalEnvironment.Destination.SequenceNumber.MessageSequenceNumber;
+        
+        -- Add sequence number to the message payload
+        SET OutputRoot.XMLNSC.Data.SequenceNumber = seqNum;
+        SET OutputRoot.XMLNSC.Data.Record = InputRoot.XMLNSC.Record;  -- Assuming input data is in XML format
+        RETURN TRUE;
+    END;
+
+    CREATE PROCEDURE CopyEntireMessage()
+    BEGIN
+        SET OutputRoot = InputRoot;
+    END;
+END MODULE;

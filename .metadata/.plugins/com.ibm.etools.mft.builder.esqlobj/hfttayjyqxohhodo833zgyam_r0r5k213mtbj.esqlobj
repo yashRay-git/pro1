@@ -1,0 +1,161 @@
+CREATE COMPUTE MODULE ResponseToChannel
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		CALL ResponseToChannel();
+		RETURN FALSE;
+	END;
+	CREATE PROCEDURE ResponseToChannel() BEGIN
+		SET Environment.domainDataRef = InputRoot.SOAP;
+		DECLARE ccidRef, encodeRef INTEGER;
+		DECLARE envRef REFERENCE TO Environment.Variables;
+
+		SET ccidRef = InputRoot.Properties.CodedCharSetId;
+		SET encodeRef = InputRoot.Properties.Encoding;
+		DECLARE domainDataRef REFERENCE TO InputRoot.SOAP;
+		DECLARE domainName CHARACTER FIELDNAME(InputBody);
+		SET Environment.reqPayload = getPayLoad(domainName,domainDataRef,encodeRef,ccidRef);
+		----------------------Request Logging-------------------------
+		 CREATE LASTCHILD OF OutputRoot DOMAIN 'XMLNSC';
+	    DECLARE OutRef REFERENCE TO OutputRoot.XMLNSC;
+	    	 CALL PayloadLogging(envRef.id,Environment.reqPayload,'Host_Response',ApplicationLabel,envRef.source,envRef.service,envRef.operation,envRef.created_by,OutRef);
+	    	 IF consoleLog_enable=TRUE THEN
+	    	 	LOG EVENT SEVERITY 1 CATALOG 'BIPmsgs' MESSAGE 2951 VALUES('AccountBalanceEnqHost_Response : '||Environment.reqPayload);
+	    	 END IF;
+	    	  
+		-- CALL PayloadLogging(envRef.id,Environment.reqPayload,'BACKEND_RESP',ApplicationLabel,OutRef);
+		--CALL writeToLogFile(MessageFlowLabel,LOGGER_NAME,log_type,' ------- BACKEND_RESP -------') INTO rc;
+		--CALL writeToLogFile(MessageFlowLabel,LOGGER_NAME,log_type,'BACKEND_RESP data  is: '||Environment.reqPayload) INTO rc;
+		--CALL writeToLogFile(MessageFlowLabel,LOGGER_NAME,log_type,' ----------------------------------------------------------------------') INTO rc;
+		-------------- Generating response to channel ---------------
+
+--		IF InputRoot.SOAP.*:Body.*:QUERYACCBAL_IOFS_RES.*:FCUBS_HEADER.*:MSGSTAT IS NULL OR FIELDVALUE(InputRoot.SOAP.*:Body.*:QUERYACCBAL_IOFS_RES.*:FCUBS_HEADER.*:MSGSTAT) IS NULL THEN
+--			SET OutputRoot = InputRoot;
+--
+--			SET OutputLocalEnvironment.Destination.SOAP.Reply.replyIdentifier = envRef.replyIdentifier;
+--			PROPAGATE TO TERMINAL 'out' DELETE NONE;
+--		ELSE
+--			SET OutputRoot.Properties = InputRoot.Properties;
+--			SET OutputRoot.HTTPResponseHeader = InputRoot.HTTPResponseHeader;
+--			CREATE LASTCHILD OF OutputRoot DOMAIN 'SOAP';
+--
+--			SET OutputRoot.SOAP.Context = InputRoot.SOAP.Context;
+--
+--			DECLARE inputHeaderRef REFERENCE TO InputRoot.SOAP.*:Body.*:QUERYACCBAL_IOFS_RES.*:FCUBS_HEADER;
+--			DECLARE inputBodyRef REFERENCE TO InputRoot.SOAP.*:Body.*:QUERYACCBAL_IOFS_RES.*:FCUBS_BODY;
+--
+--			CREATE LASTCHILD OF OutputRoot.SOAP NAME 'Body';
+--			CREATE LASTCHILD OF OutputRoot.SOAP.Body NAMESPACE ns NAME 'QUERYACCBAL_IOFS_RES';
+--			CREATE LASTCHILD OF OutputRoot.SOAP.Body.ns:QUERYACCBAL_IOFS_RES NAME 'FCUBS_HEADER';
+--			CREATE LASTCHILD OF OutputRoot.SOAP.Body.ns:QUERYACCBAL_IOFS_RES NAME 'FCUBS_BODY';
+--
+--			DECLARE outputheaderRef REFERENCE TO OutputRoot.SOAP.Body.ns:QUERYACCBAL_IOFS_RES.FCUBS_HEADER;
+--			DECLARE outputbodyRef REFERENCE TO OutputRoot.SOAP.Body.ns:QUERYACCBAL_IOFS_RES.FCUBS_BODY;
+--
+--			SET outputheaderRef.SOURCE = NULLIF(inputHeaderRef.*:SOURCE,'');
+--			SET outputheaderRef.UBSCOMP = NULLIF(inputHeaderRef.*:UBSCOMP,'');
+--			SET outputheaderRef.MSGID = NULLIF(inputHeaderRef.*:MSGID,'');
+--			SET outputheaderRef.CORRELID = NULLIF(inputHeaderRef.*:CORRELID,'');
+--			SET outputheaderRef.USERID = NULLIF(inputHeaderRef.*:USERID,'');
+--			SET outputheaderRef.ENTITY = NULLIF(inputHeaderRef.*:ENTITY,'');
+--			SET outputheaderRef.BRANCH = NULLIF(inputHeaderRef.*:BRANCH,'');
+--			SET outputheaderRef.MODULEID = NULLIF(inputHeaderRef.*:MODULEID,'');
+--			SET outputheaderRef.SERVICE = NULLIF(inputHeaderRef.*:SERVICE,'');
+--			SET outputheaderRef.OPERATION = NULLIF(inputHeaderRef.*:OPERATION,'');
+--			SET outputheaderRef.SOURCE_OPERATION = NULLIF(inputHeaderRef.*:SOURCE_OPERATION,'');
+--			SET outputheaderRef.SOURCE_USERID = NULLIF(inputHeaderRef.*:SOURCE_USERID,'');
+--			SET outputheaderRef.DESTINATION = NULLIF(inputHeaderRef.*:DESTINATION,'');
+--			SET outputheaderRef.MULTITRIPID = NULLIF(inputHeaderRef.*:MULTITRIPID,'');
+--			SET outputheaderRef.FUNCTIONID = NULLIF(inputHeaderRef.*:FUNCTIONID,'');
+--			SET outputheaderRef.ACTION = NULLIF(inputHeaderRef.*:ACTION,'');
+--			SET outputheaderRef.MSGSTAT = NULLIF(inputHeaderRef.*:MSGSTAT,'');
+--			SET outputheaderRef.SNAPSHOTID = NULLIF(inputHeaderRef.*:SNAPSHOTID,'');
+--			SET outputheaderRef.PASSWORD = NULLIF(inputHeaderRef.*:PASSWORD,'');
+--
+--			DECLARE I INTEGER 1;
+--			DECLARE inRef REFERENCE TO inputHeaderRef.*:ADDL.*:PARAM[>];
+--			WHILE LASTMOVE(inRef) DO
+--				SET outputheaderRef.ADDL.PARAM[I].*:NAME = NULLIF(inRef.*:NAME,'');
+--				SET outputheaderRef.ADDL.PARAM[I].*:VALUE = NULLIF(inRef.*:VALUE,'');
+--				SET I = I + 1;
+--				MOVE inRef NEXTSIBLING REPEAT TYPE NAME;
+--			END WHILE;
+--
+--			SET outputbodyRef."ACC-Balance".ACC_BAL.BRANCH_CODE = NULLIF(inputBodyRef.*:"ACC-Balance".*:ACC_BAL.*:BRANCH_CODE,'');
+--			SET outputbodyRef."ACC-Balance".ACC_BAL.CUST_AC_NO = NULLIF(inputBodyRef.*:"ACC-Balance".*:ACC_BAL.*:CUST_AC_NO,'');
+--			SET outputbodyRef."ACC-Balance".ACC_BAL.CCY = NULLIF(inputBodyRef.*:"ACC-Balance".*:ACC_BAL.*:CCY,'');
+--			SET outputbodyRef."ACC-Balance".ACC_BAL.TRNDT = NULLIF(inputBodyRef.*:"ACC-Balance".*:ACC_BAL.*:TRNDT,'');
+--			SET outputbodyRef."ACC-Balance".ACC_BAL.OPNBAL = NULLIF(inputBodyRef.*:"ACC-Balance".*:ACC_BAL.*:OPNBAL,'');
+--			SET outputbodyRef."ACC-Balance".ACC_BAL.CURBAL = NULLIF(inputBodyRef.*:"ACC-Balance".*:ACC_BAL.*:CURBAL,'');
+--			SET outputbodyRef."ACC-Balance".ACC_BAL.AVLBAL = NULLIF(inputBodyRef.*:"ACC-Balance".*:ACC_BAL.*:AVLBAL,'');
+--			SET outputbodyRef."ACC-Balance".ACC_BAL.UNCOLAMT = NULLIF(inputBodyRef.*:"ACC-Balance".*:ACC_BAL.*:UNCOLAMT,'');
+--			SET outputbodyRef."ACC-Balance".ACC_BAL.AVLCR = NULLIF(inputBodyRef.*:"ACC-Balance".*:ACC_BAL.*:AVLCR,'');
+--			SET outputbodyRef."ACC-Balance".ACC_BAL.MTDTOVCR = NULLIF(inputBodyRef.*:"ACC-Balance".*:ACC_BAL.*:MTDTOVCR,'');
+--			SET outputbodyRef."ACC-Balance".ACC_BAL.MTDTOVDR = NULLIF(inputBodyRef.*:"ACC-Balance".*:ACC_BAL.*:MTDTOVDR,'');
+--			SET outputbodyRef."ACC-Balance".ACC_BAL.ACY_BKD_AMT = NULLIF(inputBodyRef.*:"ACC-Balance".*:ACC_BAL.*:ACY_BKD_AMT,'');
+--			SET outputbodyRef."ACC-Balance".ACC_BAL.ACCR_DR = NULLIF(inputBodyRef.*:"ACC-Balance".*:ACC_BAL.*:ACCR_DR,'');
+--			SET outputbodyRef."ACC-Balance".ACC_BAL.ACCR_CR = NULLIF(inputBodyRef.*:"ACC-Balance".*:ACC_BAL.*:ACCR_CR,'');
+--			SET outputbodyRef."ACC-Balance".ACC_BAL.SUBLIMIT = NULLIF(inputBodyRef.*:"ACC-Balance".*:ACC_BAL.*:SUBLIMIT,'');
+--			SET outputbodyRef."ACC-Balance".ACC_BAL.TODLIMIT = NULLIF(inputBodyRef.*:"ACC-Balance".*:ACC_BAL.*:TODLIMIT,'');
+--			SET outputbodyRef."ACC-Balance".ACC_BAL.TOD_ST_DT = NULLIF(inputBodyRef.*:"ACC-Balance".*:ACC_BAL.*:TOD_ST_DT,'');
+--			SET outputbodyRef."ACC-Balance".ACC_BAL.TOD_EXP_DT = NULLIF(inputBodyRef.*:"ACC-Balance".*:ACC_BAL.*:TOD_EXP_DT,'');
+--			SET outputbodyRef."ACC-Balance".ACC_BAL.ACY_TANK_CR = NULLIF(inputBodyRef.*:"ACC-Balance".*:ACC_BAL.*:ACY_TANK_CR,'');
+--			SET outputbodyRef."ACC-Balance".ACC_BAL.ACY_TANK_DR = NULLIF(inputBodyRef.*:"ACC-Balance".*:ACC_BAL.*:ACY_TANK_DR,'');
+--			SET outputbodyRef."ACC-Balance".ACC_BAL.ACY_TANK_UNCOL = NULLIF(inputBodyRef.*:"ACC-Balance".*:ACC_BAL.*:ACY_TANK_UNCOL,'');
+--			SET outputbodyRef."ACC-Balance".ACC_BAL.ACY_UNAUTH_DR = NULLIF(inputBodyRef.*:"ACC-Balance".*:ACC_BAL.*:ACY_UNAUTH_DR,'');
+--			SET outputbodyRef."ACC-Balance".ACC_BAL.ACY_UNAUTH_TANK_DR = NULLIF(inputBodyRef.*:"ACC-Balance".*:ACC_BAL.*:ACY_UNAUTH_TANK_DR,'');
+--			SET outputbodyRef."ACC-Balance".ACC_BAL.ACY_UNAUTH_CR = NULLIF(inputBodyRef.*:"ACC-Balance".*:ACC_BAL.*:ACY_UNAUTH_CR,'');
+--			SET outputbodyRef."ACC-Balance".ACC_BAL.ACY_UNAUTH_TANK_CR = NULLIF(inputBodyRef.*:"ACC-Balance".*:ACC_BAL.*:ACY_UNAUTH_TANK_CR,'');
+--			SET outputbodyRef."ACC-Balance".ACC_BAL.ACY_UNAUTH_UNCOL = NULLIF(inputBodyRef.*:"ACC-Balance".*:ACC_BAL.*:ACY_UNAUTH_UNCOL,'');
+--			SET outputbodyRef."ACC-Balance".ACC_BAL.ACY_UNAUTH_TANK_UNCOL = NULLIF(inputBodyRef.*:"ACC-Balance".*:ACC_BAL.*:ACY_UNAUTH_TANK_UNCOL,'');
+--
+--			SET I = 1;
+--			MOVE inRef TO inputBodyRef.*:"ACC-Balance".*:ACC_BAL.*:INTLIQD[>];
+--			WHILE LASTMOVE(inRef) DO
+--				SET outputbodyRef."ACC-Balance".ACC_BAL.INTLIQD[I].*:INTPRD = NULLIF(inRef.*:INTPRD,'');
+--				SET outputbodyRef."ACC-Balance".ACC_BAL.INTLIQD[I].*:NXTLIQDT = NULLIF(inRef.*:NXTLIQDT,'');
+--				SET I = I + 1;
+--				MOVE inRef NEXTSIBLING REPEAT TYPE NAME;
+--			END WHILE;
+--
+--			SET I = 1;
+--			MOVE inRef TO inputBodyRef.*:FCUBS_ERROR_RESP.*:ERROR[>];
+--			WHILE LASTMOVE(inRef) Do
+--				SET outputbodyRef.FCUBS_ERROR_RESP.ERROR[I].ECODE = NULLIF(inRef.*:ECODE,'');
+--				SET outputbodyRef.FCUBS_ERROR_RESP.ERROR[I].EDESC = NULLIF(inRef.*:EDESC,'');
+--				SET I = I + 1;
+--				MOVE inRef NEXTSIBLING REPEAT TYPE NAME;
+--			END WHILE;
+--
+--			SET I = 1;
+--			MOVE inRef TO inputBodyRef.*:FCUBS_WARNING_RESP.*:WARNING[>];
+--			WHILE LASTMOVE(inRef) Do
+--				SET outputbodyRef.FCUBS_WARNING_RESP.WARNING[I].WCODE = NULLIF(inRef.*:WCODE,'');
+--				SET outputbodyRef.FCUBS_WARNING_RESP.WARNING[I].WDESC = NULLIF(inRef.*:WDESC,'');
+--				SET I = I + 1;
+--				MOVE inRef NEXTSIBLING REPEAT TYPE NAME;
+--			END WHILE;
+--  
+        set OutputRoot=InputRoot;
+		SET OutputLocalEnvironment.Destination.SOAP.Reply.replyIdentifier = envRef.replyIdentifier;
+		PROPAGATE TO TERMINAL 'out' DELETE NONE;
+--		END IF;
+           
+		SET Environment.outputData = OutputRoot;
+		---------------------- Response Logging -------------------------
+		MOVE domainDataRef TO Environment.outputData.SOAP;
+		SET Environment.resPayload = getPayLoad(domainName,domainDataRef,encodeRef,ccidRef);
+		SET OutputRoot.HTTPResponseHeader = NULL;
+		SET OutputRoot.SOAP = NULL;
+		 CREATE LASTCHILD OF OutputRoot DOMAIN 'XMLNSC';
+		 MOVE OutRef TO OutputRoot.XMLNSC;
+		  CALL PayloadLogging(envRef.id,Environment.reqPayload,'Channel_Response',ApplicationLabel,envRef.source,envRef.service,envRef.operation,envRef.created_by,OutRef);
+		  IF consoleLog_enable=TRUE THEN
+		  	LOG EVENT SEVERITY 1 CATALOG 'BIPmsgs' MESSAGE 2951 VALUES('AccountBalanceEnqChannel_Response: '||Environment.reqPayload);
+		  END IF;
+		   
+		-- CALL PayloadLogging(envRef.id,Environment.reqPayload,'CHANNEL_RESP',MessageFlowLabel,OutRef);
+		--CALL writeToLogFile(MessageFlowLabel,LOGGER_NAME,log_type,' -------- CHANNEL_RESP -------') INTO rc;
+		--CALL writeToLogFile(MessageFlowLabel,LOGGER_NAME,log_type,'CHANNEL_RESP data is: '||Environment.resPayload) INTO rc;
+
+	END;
+END MODULE;

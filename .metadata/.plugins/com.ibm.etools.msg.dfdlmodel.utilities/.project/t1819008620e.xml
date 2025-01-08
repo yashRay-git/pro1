@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<MessageBroker name="3_12_TASK_VALIDATION_HARD">
+  <XSDCollection href="platform:/resource/3_12_TASK_VALIDATION_HARD/VALIDATION.xsd" prefix="" targetNamespace="">
+    <element href="platform:/resource/3_12_TASK_VALIDATION_HARD/VALIDATION.xsd#//Root;XSDElementDeclaration" name="Root"/>
+  </XSDCollection>
+</MessageBroker>

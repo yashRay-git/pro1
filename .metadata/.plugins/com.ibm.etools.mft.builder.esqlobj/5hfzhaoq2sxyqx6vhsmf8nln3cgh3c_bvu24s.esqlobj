@@ -1,0 +1,26 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+    BEGIN
+        -- Call the procedure to insert data into the database
+        CALL InsertEmployeeData();
+        
+        RETURN TRUE;
+    END;
+
+    CREATE PROCEDURE InsertEmployeeData() 
+    BEGIN
+        -- Declare variables to hold the incoming data from the LocalEnvironment
+        DECLARE empID INTEGER;
+        DECLARE empName CHARACTER;
+
+        -- Extract data from the LocalEnvironment (if that's where your data is stored)
+        SET empID = CAST(FIELDVALUE(InputLocalEnvironment.Variables.Employee.EmpID) AS INTEGER);
+        SET empName = FIELDVALUE(InputLocalEnvironment.Variables.Employee.EmpName);
+
+        -- Construct the SQL Insert statement dynamically
+        DECLARE Insert_data CHARACTER;
+        SET Insert_data = 'INSERT INTO DATANODE (EmpID, EmpName) VALUES (' || empID || ', ''' || empName || ''')';
+
+        -- Execute the SQL Insert statement
+        PASSTHRU(Insert_data);
+    END;
+

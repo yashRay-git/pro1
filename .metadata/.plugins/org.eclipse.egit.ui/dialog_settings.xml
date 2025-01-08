@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="GitSelectRepositoryPage.lastRepository" value="C:\Users\Sreenivas Bandaru\git\IIB_WORK_TIME\.git"/>
+	<list key="RepositorySelectionPage.UsedUris">
+		<item value="https://github.com/yashRay-git/IIB_WORK_TIME.git"/>
+	</list>
+	<list key="EGit.KnownHosts">
+		<item value="bitbucket.org"/>
+		<item value="git.eclipse.org"/>
+		<item value="github.com"/>
+	</list>
+</section>

@@ -1,0 +1,31 @@
+CREATE PROCEDURE CopyEntireMessage() 
+BEGIN
+    -- References for HTTP Request Identifier and Exception List
+    DECLARE msg_id REFERENCE TO InputLocalEnvironment.Destination.HTTP.RequestIdentifier;
+    DECLARE exc REFERENCE TO InputExceptionList.*[1];
+
+    -- Variables for exception details
+    DECLARE File, Line, Type, Label, Text CHARACTER;
+    DECLARE Number INTEGER;
+
+    -- Loop through the Exception List
+    WHILE LASTMOVE(exc) DO
+        MOVE exc LASTCHILD;
+        IF exc.Number IS NOT NULL THEN
+            SET File = exc.File;
+            SET Line = exc.Line;
+            SET Type = exc.Type;
+            SET Label = exc.Label;
+            SET Number = exc.Number;
+            SET Text = exc.Text;
+        END IF;
+    END WHILE;
+
+    -- Set exception details into the OutputRoot for further processing or logging
+    SET OutputRoot.XMLNSC.ExceptionList.Line = Line;
+    SET OutputRoot.XMLNSC.ExceptionList.Number = Number;
+    SET OutputRoot.XMLNSC.ExceptionList.Text = Text;
+
+    -- Call external procedure to log the exception details
+    CALL Execep(ApplicationLabel, MessageFlowLabel, NodeLabel, msg_id, Line, CAST(Number AS CHARACTER), Text, CURRENT_TIMESTAMP);
+END;

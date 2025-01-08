@@ -1,0 +1,4 @@
+CREATE PROCEDURE CopyEntireMessage() BEGIN
+        -- Copies the entire message body
+        SET OutputRoot = InputRoot;
+    END;

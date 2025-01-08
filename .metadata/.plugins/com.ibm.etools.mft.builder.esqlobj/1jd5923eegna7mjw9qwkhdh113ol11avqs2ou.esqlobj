@@ -1,0 +1,109 @@
+CREATE COMPUTE MODULE FLOWFOREVERYNEWFILE_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		-- CALL CopyMessageHeaders();
+		CALL CopyEntireMessage();
+		RETURN TRUE;
+	END;
+
+	CREATE PROCEDURE CopyMessageHeaders() BEGIN
+		DECLARE I INTEGER 1;
+		DECLARE J INTEGER;
+		SET J = CARDINALITY(InputRoot.*[]);
+		WHILE I < J DO
+			SET OutputRoot.*[I] = InputRoot.*[I];
+			SET I = I + 1;
+		END WHILE;
+	END;
+/*
+<breakfast_menu>
+<food>
+    <name>Belgian Waffles</name>
+    <price>$5.95</price>
+    <description>
+   Two of our famous Belgian Waffles with plenty of real maple syrup
+   </description>
+    <calories>650</calories>
+</food>
+<food>
+    <name>Strawberry Belgian Waffles</name>
+    <price>$7.95</price>
+    <description>
+    Light Belgian waffles covered with strawberries and whipped cream
+    </description>
+    <calories>900</calories>
+</food>
+<food>
+    <name>Berry-Berry Belgian Waffles</name>
+    <price>$8.95</price>
+    <description>
+    Belgian waffles covered with assorted fresh berries and whipped cream
+    </description>
+    <calories>900</calories>
+</food>
+<food>
+    <name>French Toast</name>
+    <price>$4.50</price>
+    <description>
+    Thick slices made from our homemade sourdough bread
+    </description>
+    <calories>600</calories>
+</food>
+<food>
+    <name>Homestyle Breakfast</name>
+    <price>$6.95</price>
+    <description>
+    Two eggs, bacon or sausage, toast, and our ever-popular hash browns
+    </description>
+    <calories>950</calories>
+</food>
+</breakfast_menu>
+
+*/
+
+
+	CREATE PROCEDURE CopyEntireMessage() BEGIN
+		
+		--SET OutputRoot = InputRoot;
+	
+--			DECLARE Ref REFERENCE TO InputRoot.XMLNSC.breakfast_menu.food;
+--		
+--		
+--		DECLARE i INTEGER 1;
+--		WHILE LASTMOVE(Ref) DO
+--			DECLARE dataRef, breakFastRef, foodRef REFERENCE TO OutputRoot.JSON;
+--			
+--			CREATE LASTCHILD OF OutputRoot.JSON AS dataRef NAME 'Data';
+--			CREATE LASTCHILD OF dataRef AS breakFastRef NAME 'BREAKFAST_MENU';
+--			CREATE LASTCHILD OF breakFastRef AS foodRef NAME 'FOOD';
+--			
+--			SET foodRef.NAME= Ref.name;
+--			SET foodRef.PRICE=Ref.price;
+--			SET foodRef.DESCRIPTION=Ref.description;
+--			SET foodRef.CALORIES= Ref.calories;
+--			
+--			
+--			SET OutputLocalEnvironment.Destination.File.Name='File_' || CAST (i AS CHARACTER ) || '.txt';
+--			SET i=i+1;
+--			
+--			PROPAGATE TO TERMINAL 'out';
+--			MOVE Ref NEXTSIBLING;
+--			
+--			
+--		END WHILE;
+--		
+		
+		
+		-- TO STORED DIFFRENT FILE IN DIRREFNT LOCATION 
+		
+		
+		    
+--		without ROOT ELEMENT
+     
+			 SET OutputRoot = InputRoot;
+			 set OutputLocalEnvironment.Destination.File.Directory= 'C:\Users\Sreenivas Bandaru\Documents\output' || cast(sh as CHARACTER) ;
+			 set OutputLocalEnvironment.Destination.File.Name= 'file' || cast(sh as CHARACTER) || '.txt' || cast(CURRENT_DATE as CHARACTER);
+		  
+			 SET sh = sh + 1;
+	END;
+END MODULE;

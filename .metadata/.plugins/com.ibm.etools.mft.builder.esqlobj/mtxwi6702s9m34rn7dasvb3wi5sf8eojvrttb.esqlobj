@@ -1,0 +1,19 @@
+CREATE DATABASE MODULE DATABASEnode_Database
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		call insertt();
+		RETURN TRUE;
+	END;
+   
+   CREATE PROCEDURE insertt ( )
+   BEGIN
+   	
+ DECLARE eid  CHARACTER Root.XMLNSC.Employee_Details.ID;
+	 	 DECLARE ename CHARACTER  Root.XMLNSC.Employee_Details.NAME;
+	 	 	 	 DECLARE eage CHARACTER  Root.XMLNSC.Employee_Details.AGE;
+	 	 	 	 	 	 	 	 	 
+   	 insert into DEMO (id,name,age) VALUES (eid.id, ename.name, eage.age );
+   	 
+   END;
+   
+END MODULE;

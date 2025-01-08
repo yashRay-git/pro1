@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<MessageBroker name="T24WSDL">
+  <XSDCollection href="platform:/resource/T24WSDL/services_1_2_3_4_5_6_7_8_9_10_11.xsd" prefix="" targetNamespace="http://temenos.com/CURRENCYRATES">
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3_4_5_6_7_8_9_10_11.xsd#//CURRENCYRATESType;XSDComplexTypeDefinition" name="CURRENCYRATESType"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/T24WSDL/services_1_2_3_4_5_6.xsd" prefix="" targetNamespace="http://temenos.com/CHEQUEISSUEINPUTCBOWS">
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3_4_5_6.xsd#//CHEQUEISSUEINPUTCBOWSType;XSDComplexTypeDefinition" name="CHEQUEISSUEINPUTCBOWSType"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/T24WSDL/services_1_2_3_4_5_6_7_8_9_10.xsd" prefix="" targetNamespace="http://temenos.com/FUNDSTRANSFER">
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3_4_5_6_7_8_9_10.xsd#//FUNDSTRANSFERType;XSDComplexTypeDefinition" name="FUNDSTRANSFERType"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/T24WSDL/services_1_2_3.xsd" prefix="tns" targetNamespace="http://temenos.com/MMT">
+    <import name="services_1_2_3_4.xsd" targetNamespace="http://temenos.com/CARDISSUEDELWS"/>
+    <import name="services_1_2_3_4_5.xsd" targetNamespace="http://temenos.com/CARDISSUE"/>
+    <import name="services_1_2_3_4_5_6.xsd" targetNamespace="http://temenos.com/CHEQUEISSUEINPUTCBOWS"/>
+    <import name="services_1_2_3_4_5_6_7.xsd" targetNamespace="http://temenos.com/CHEQUEISSUE"/>
+    <import name="services_1_2_3_4_5_6_7_8.xsd" targetNamespace="http://temenos.com/ACCTCOMPANYVIEW"/>
+    <import name="services.xsd" targetNamespace="http://temenos.com/PAYMENTSTOPREVOKECBOWS"/>
+    <import name="services_1_2.xsd" targetNamespace="http://temenos.com/PAYMENTSTOP"/>
+    <import name="services_1_2_3_4_5_6_7_8_9.xsd" targetNamespace="http://temenos.com/FUNDSTRANSFERACTRMMT"/>
+    <import name="services_1_2_3_4_5_6_7_8_9_10.xsd" targetNamespace="http://temenos.com/FUNDSTRANSFER"/>
+    <import name="services_1.xsd" targetNamespace="http://temenos.com/PAYMENTSTOPINPUTWS"/>
+    <import name="services_1_2_3_4_5_6_7_8_9_10_11.xsd" targetNamespace="http://temenos.com/CURRENCYRATES"/>
+    <import name="services_1_2_3_4_5_6_7_8_9_10_11_12.xsd" targetNamespace="http://temenos.com/ACCTVIEW"/>
+    <import name="services_1_2_3_4_5_6_7_8_9_10_11_12_13.xsd" targetNamespace="http://temenos.com/ACCTBALCTS"/>
+    <import name="services_1_2_3_4_5_6_7_8_9_10_11_12_13_14.xsd" targetNamespace="http://temenos.com/EMMTTXNFT"/>
+    <import name="services_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15.xsd" targetNamespace="http://temenos.com/EMMTMINISTMT"/>
+    <import name="services_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16.xsd" targetNamespace="http://temenos.com/CHQPRESENTEDWS"/>
+    <import name="services_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16_17.xsd" targetNamespace="http://temenos.com/EMMTMINISTMTDATE"/>
+    <import name="services_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16_17_18.xsd" targetNamespace="http://temenos.com/CBOCARDREGDETINP2"/>
+    <import name="services_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16_17_18_19.xsd" targetNamespace="http://temenos.com/CBOCARDREGDET"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//ACCOUNTVIEW;XSDElementDeclaration" name="ACCOUNTVIEW" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}ACCOUNTVIEW"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//ACCOUNTVIEWResponse;XSDElementDeclaration=1" name="ACCOUNTVIEWResponse" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}ACCOUNTVIEWResponse"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//ACCTBRANCH;XSDElementDeclaration=2" name="ACCTBRANCH" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}ACCTBRANCH"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//ACCTBRANCHResponse;XSDElementDeclaration=3" name="ACCTBRANCHResponse" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}ACCTBRANCHResponse"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//CHEQUEBOOKREQUEST;XSDElementDeclaration=4" name="CHEQUEBOOKREQUEST" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}CHEQUEBOOKREQUEST"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//CHEQUEBOOKREQUESTResponse;XSDElementDeclaration=5" name="CHEQUEBOOKREQUESTResponse" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}CHEQUEBOOKREQUESTResponse"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//CHEQUEBOOKREQUEST_Validate;XSDElementDeclaration=6" name="CHEQUEBOOKREQUEST_Validate" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}CHEQUEBOOKREQUEST_Validate"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//CHEQUEBOOKREQUEST_ValidateResponse;XSDElementDeclaration=7" name="CHEQUEBOOKREQUEST_ValidateResponse" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}CHEQUEBOOKREQUEST_ValidateResponse"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//CHEQUESTATUS;XSDElementDeclaration=8" name="CHEQUESTATUS" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}CHEQUESTATUS"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//CHEQUESTATUSResponse;XSDElementDeclaration=9" name="CHEQUESTATUSResponse" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}CHEQUESTATUSResponse"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//CURRENCYRATES;XSDElementDeclaration=10" name="CURRENCYRATES" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}CURRENCYRATES"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//CURRENCYRATESResponse;XSDElementDeclaration=11" name="CURRENCYRATESResponse" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}CURRENCYRATESResponse"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//CancelDebitCard;XSDElementDeclaration=12" name="CancelDebitCard" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}CancelDebitCard"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//CancelDebitCardResponse;XSDElementDeclaration=13" name="CancelDebitCardResponse" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}CancelDebitCardResponse"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//CancelDebitCard_Validate;XSDElementDeclaration=14" name="CancelDebitCard_Validate" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}CancelDebitCard_Validate"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//CancelDebitCard_ValidateResponse;XSDElementDeclaration=15" name="CancelDebitCard_ValidateResponse" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}CancelDebitCard_ValidateResponse"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//DEBITCARDREQUEST;XSDElementDeclaration=16" name="DEBITCARDREQUEST" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}DEBITCARDREQUEST"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//DEBITCARDREQUESTResponse;XSDElementDeclaration=17" name="DEBITCARDREQUESTResponse" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}DEBITCARDREQUESTResponse"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//DEBITCARDREQUEST_Validate;XSDElementDeclaration=18" name="DEBITCARDREQUEST_Validate" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}DEBITCARDREQUEST_Validate"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//DEBITCARDREQUEST_ValidateResponse;XSDElementDeclaration=19" name="DEBITCARDREQUEST_ValidateResponse" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}DEBITCARDREQUEST_ValidateResponse"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//MMTACCTBALANCE;XSDElementDeclaration=20" name="MMTACCTBALANCE" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}MMTACCTBALANCE"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//MMTACCTBALANCEResponse;XSDElementDeclaration=21" name="MMTACCTBALANCEResponse" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}MMTACCTBALANCEResponse"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//MMTACCTTXN;XSDElementDeclaration=22" name="MMTACCTTXN" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}MMTACCTTXN"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//MMTACCTTXNResponse;XSDElementDeclaration=23" name="MMTACCTTXNResponse" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}MMTACCTTXNResponse"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//MMTACCTTXN_Validate;XSDElementDeclaration=24" name="MMTACCTTXN_Validate" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}MMTACCTTXN_Validate"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//MMTACCTTXN_ValidateResponse;XSDElementDeclaration=25" name="MMTACCTTXN_ValidateResponse" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}MMTACCTTXN_ValidateResponse"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//MMTFTVIEW;XSDElementDeclaration=26" name="MMTFTVIEW" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}MMTFTVIEW"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//MMTFTVIEWResponse;XSDElementDeclaration=27" name="MMTFTVIEWResponse" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}MMTFTVIEWResponse"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//MMTSTMT;XSDElementDeclaration=28" name="MMTSTMT" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}MMTSTMT"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//MMTSTMTResponse;XSDElementDeclaration=29" name="MMTSTMTResponse" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}MMTSTMTResponse"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//REVOKESTOPPAYMENTCHEQUE;XSDElementDeclaration=30" name="REVOKESTOPPAYMENTCHEQUE" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}REVOKESTOPPAYMENTCHEQUE"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//REVOKESTOPPAYMENTCHEQUEResponse;XSDElementDeclaration=31" name="REVOKESTOPPAYMENTCHEQUEResponse" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}REVOKESTOPPAYMENTCHEQUEResponse"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//REVOKESTOPPAYMENTCHEQUE_Validate;XSDElementDeclaration=32" name="REVOKESTOPPAYMENTCHEQUE_Validate" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}REVOKESTOPPAYMENTCHEQUE_Validate"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//REVOKESTOPPAYMENTCHEQUE_ValidateResponse;XSDElementDeclaration=33" name="REVOKESTOPPAYMENTCHEQUE_ValidateResponse" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}REVOKESTOPPAYMENTCHEQUE_ValidateResponse"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//STMTDATE;XSDElementDeclaration=34" name="STMTDATE" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}STMTDATE"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//STMTDATEResponse;XSDElementDeclaration=35" name="STMTDATEResponse" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}STMTDATEResponse"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//STOPPAYMENTCHEQUE;XSDElementDeclaration=36" name="STOPPAYMENTCHEQUE" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}STOPPAYMENTCHEQUE"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//STOPPAYMENTCHEQUEResponse;XSDElementDeclaration=37" name="STOPPAYMENTCHEQUEResponse" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}STOPPAYMENTCHEQUEResponse"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//STOPPAYMENTCHEQUE_Validate;XSDElementDeclaration=38" name="STOPPAYMENTCHEQUE_Validate" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}STOPPAYMENTCHEQUE_Validate"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//STOPPAYMENTCHEQUE_ValidateResponse;XSDElementDeclaration=39" name="STOPPAYMENTCHEQUE_ValidateResponse" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}STOPPAYMENTCHEQUE_ValidateResponse"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//callOfs;XSDElementDeclaration=40" name="callOfs" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}callOfs"/>
+    <element href="platform:/resource/T24WSDL/services_1_2_3.xsd#//callOfsResponse;XSDElementDeclaration=41" name="callOfsResponse" type="mlib://T24WSDL#/-/complexType{http://temenos.com/MMT}callOfsResponse"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//CancelDebitCard_Validate;XSDComplexTypeDefinition" name="CancelDebitCard_Validate"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//webRequestCommon;XSDComplexTypeDefinition=1" name="webRequestCommon"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//ofsFunction;XSDComplexTypeDefinition=2" name="ofsFunction"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//CancelDebitCard_ValidateResponse;XSDComplexTypeDefinition=3" name="CancelDebitCard_ValidateResponse"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//Status;XSDComplexTypeDefinition=4" name="Status"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//CancelDebitCard;XSDComplexTypeDefinition=5" name="CancelDebitCard"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//CancelDebitCardResponse;XSDComplexTypeDefinition=6" name="CancelDebitCardResponse"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//CHEQUEBOOKREQUEST;XSDComplexTypeDefinition=7" name="CHEQUEBOOKREQUEST"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//CHEQUEBOOKREQUESTResponse;XSDComplexTypeDefinition=8" name="CHEQUEBOOKREQUESTResponse"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//ACCTBRANCH;XSDComplexTypeDefinition=9" name="ACCTBRANCH"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//enquiryInput;XSDComplexTypeDefinition=10" name="enquiryInput"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//enquiryInputCollection;XSDComplexTypeDefinition=11" name="enquiryInputCollection"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//ACCTBRANCHResponse;XSDComplexTypeDefinition=12" name="ACCTBRANCHResponse"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//REVOKESTOPPAYMENTCHEQUE_Validate;XSDComplexTypeDefinition=13" name="REVOKESTOPPAYMENTCHEQUE_Validate"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//REVOKESTOPPAYMENTCHEQUE_ValidateResponse;XSDComplexTypeDefinition=14" name="REVOKESTOPPAYMENTCHEQUE_ValidateResponse"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//MMTACCTTXN;XSDComplexTypeDefinition=15" name="MMTACCTTXN"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//MMTACCTTXNResponse;XSDComplexTypeDefinition=16" name="MMTACCTTXNResponse"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//STOPPAYMENTCHEQUE_Validate;XSDComplexTypeDefinition=17" name="STOPPAYMENTCHEQUE_Validate"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//STOPPAYMENTCHEQUE_ValidateResponse;XSDComplexTypeDefinition=18" name="STOPPAYMENTCHEQUE_ValidateResponse"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//CURRENCYRATES;XSDComplexTypeDefinition=19" name="CURRENCYRATES"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//CURRENCYRATESResponse;XSDComplexTypeDefinition=20" name="CURRENCYRATESResponse"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//ACCOUNTVIEW;XSDComplexTypeDefinition=21" name="ACCOUNTVIEW"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//ACCOUNTVIEWResponse;XSDComplexTypeDefinition=22" name="ACCOUNTVIEWResponse"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//MMTACCTBALANCE;XSDComplexTypeDefinition=23" name="MMTACCTBALANCE"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//MMTACCTBALANCEResponse;XSDComplexTypeDefinition=24" name="MMTACCTBALANCEResponse"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//MMTFTVIEW;XSDComplexTypeDefinition=25" name="MMTFTVIEW"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//MMTFTVIEWResponse;XSDComplexTypeDefinition=26" name="MMTFTVIEWResponse"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//MMTACCTTXN_Validate;XSDComplexTypeDefinition=27" name="MMTACCTTXN_Validate"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//MMTACCTTXN_ValidateResponse;XSDComplexTypeDefinition=28" name="MMTACCTTXN_ValidateResponse"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//REVOKESTOPPAYMENTCHEQUE;XSDComplexTypeDefinition=29" name="REVOKESTOPPAYMENTCHEQUE"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//REVOKESTOPPAYMENTCHEQUEResponse;XSDComplexTypeDefinition=30" name="REVOKESTOPPAYMENTCHEQUEResponse"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//MMTSTMT;XSDComplexTypeDefinition=31" name="MMTSTMT"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//MMTSTMTResponse;XSDComplexTypeDefinition=32" name="MMTSTMTResponse"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//CHEQUEBOOKREQUEST_Validate;XSDComplexTypeDefinition=33" name="CHEQUEBOOKREQUEST_Validate"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//CHEQUEBOOKREQUEST_ValidateResponse;XSDComplexTypeDefinition=34" name="CHEQUEBOOKREQUEST_ValidateResponse"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//callOfs;XSDComplexTypeDefinition=35" name="callOfs"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//callOfsResponse;XSDComplexTypeDefinition=36" name="callOfsResponse"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//CHEQUESTATUS;XSDComplexTypeDefinition=37" name="CHEQUESTATUS"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//CHEQUESTATUSResponse;XSDComplexTypeDefinition=38" name="CHEQUESTATUSResponse"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//STMTDATE;XSDComplexTypeDefinition=39" name="STMTDATE"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//STMTDATEResponse;XSDComplexTypeDefinition=40" name="STMTDATEResponse"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//DEBITCARDREQUEST;XSDComplexTypeDefinition=41" name="DEBITCARDREQUEST"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//DEBITCARDREQUESTResponse;XSDComplexTypeDefinition=42" name="DEBITCARDREQUESTResponse"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//DEBITCARDREQUEST_Validate;XSDComplexTypeDefinition=43" name="DEBITCARDREQUEST_Validate"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//DEBITCARDREQUEST_ValidateResponse;XSDComplexTypeDefinition=44" name="DEBITCARDREQUEST_ValidateResponse"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//STOPPAYMENTCHEQUE;XSDComplexTypeDefinition=45" name="STOPPAYMENTCHEQUE"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3.xsd#//STOPPAYMENTCHEQUEResponse;XSDComplexTypeDefinition=46" name="STOPPAYMENTCHEQUEResponse"/>
+    <simpleType href="platform:/resource/T24WSDL/services_1_2_3.xsd#//successIndicator;XSDSimpleTypeDefinition" name="successIndicator" variety="atomic"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/T24WSDL/services_1_2.xsd" prefix="" targetNamespace="http://temenos.com/PAYMENTSTOP">
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2.xsd#//PAYMENTSTOPType;XSDComplexTypeDefinition" name="PAYMENTSTOPType"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/T24WSDL/services_1_2_3_4_5_6_7_8_9_10_11_12_13.xsd" prefix="" targetNamespace="http://temenos.com/ACCTBALCTS">
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3_4_5_6_7_8_9_10_11_12_13.xsd#//ACCTBALCTSType;XSDComplexTypeDefinition" name="ACCTBALCTSType"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/T24WSDL/services_1_2_3_4_5_6_7_8.xsd" prefix="" targetNamespace="http://temenos.com/ACCTCOMPANYVIEW">
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3_4_5_6_7_8.xsd#//ACCTCOMPANYVIEWType;XSDComplexTypeDefinition" name="ACCTCOMPANYVIEWType"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/T24WSDL/services_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16.xsd" prefix="" targetNamespace="http://temenos.com/CHQPRESENTEDWS">
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16.xsd#//CHQPRESENTEDWSType;XSDComplexTypeDefinition" name="CHQPRESENTEDWSType"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/T24WSDL/services_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16_17_18.xsd" prefix="" targetNamespace="http://temenos.com/CBOCARDREGDETINP2">
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16_17_18.xsd#//CBOCARDREGDETINP2Type;XSDComplexTypeDefinition" name="CBOCARDREGDETINP2Type"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/T24WSDL/services_1_2_3_4.xsd" prefix="" targetNamespace="http://temenos.com/CARDISSUEDELWS">
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3_4.xsd#//CARDISSUEDELWSType;XSDComplexTypeDefinition" name="CARDISSUEDELWSType"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/T24WSDL/services_1_2_3_4_5_6_7_8_9_10_11_12.xsd" prefix="" targetNamespace="http://temenos.com/ACCTVIEW">
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3_4_5_6_7_8_9_10_11_12.xsd#//ACCTVIEWType;XSDComplexTypeDefinition" name="ACCTVIEWType"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/T24WSDL/IBMdefined/org/xmlsoap/schemas/soap/envelope/soapenv11.xsd" prefix="tns" targetNamespace="http://schemas.xmlsoap.org/soap/envelope/">
+    <import name="IBMdefined/org/w3/www/xml/_1998/namespace/xml.xsd" targetNamespace="http://www.w3.org/XML/1998/namespace"/>
+    <element href="platform:/resource/T24WSDL/IBMdefined/org/xmlsoap/schemas/soap/envelope/soapenv11.xsd#//Envelope;XSDElementDeclaration" name="Envelope" type="mlib://T24WSDL#/-/complexType{http://schemas.xmlsoap.org/soap/envelope/}Envelope"/>
+    <element href="platform:/resource/T24WSDL/IBMdefined/org/xmlsoap/schemas/soap/envelope/soapenv11.xsd#//Header;XSDElementDeclaration=1" name="Header" type="mlib://T24WSDL#/-/complexType{http://schemas.xmlsoap.org/soap/envelope/}Header"/>
+    <element href="platform:/resource/T24WSDL/IBMdefined/org/xmlsoap/schemas/soap/envelope/soapenv11.xsd#//Body;XSDElementDeclaration=2" name="Body" type="mlib://T24WSDL#/-/complexType{http://schemas.xmlsoap.org/soap/envelope/}Body"/>
+    <element href="platform:/resource/T24WSDL/IBMdefined/org/xmlsoap/schemas/soap/envelope/soapenv11.xsd#//Fault;XSDElementDeclaration=3" name="Fault" type="mlib://T24WSDL#/-/complexType{http://schemas.xmlsoap.org/soap/envelope/}Fault"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/IBMdefined/org/xmlsoap/schemas/soap/envelope/soapenv11.xsd#//Envelope;XSDComplexTypeDefinition" name="Envelope"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/IBMdefined/org/xmlsoap/schemas/soap/envelope/soapenv11.xsd#//Header;XSDComplexTypeDefinition=1" name="Header"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/IBMdefined/org/xmlsoap/schemas/soap/envelope/soapenv11.xsd#//Body;XSDComplexTypeDefinition=2" name="Body"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/IBMdefined/org/xmlsoap/schemas/soap/envelope/soapenv11.xsd#//Fault;XSDComplexTypeDefinition=3" name="Fault"/>
+    <complexType href="platform:/resource/T24WSDL/IBMdefined/org/xmlsoap/schemas/soap/envelope/soapenv11.xsd#//FaultString;XSDComplexTypeDefinition=4" name="FaultString"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/IBMdefined/org/xmlsoap/schemas/soap/envelope/soapenv11.xsd#//detail;XSDComplexTypeDefinition=5" name="detail"/>
+    <simpleType href="platform:/resource/T24WSDL/IBMdefined/org/xmlsoap/schemas/soap/envelope/soapenv11.xsd#//encodingStyle;XSDSimpleTypeDefinition" name="encodingStyle" variety="list"/>
+    <attribute href="platform:/resource/T24WSDL/IBMdefined/org/xmlsoap/schemas/soap/envelope/soapenv11.xsd#//mustUnderstand;XSDAttributeDeclaration" name="mustUnderstand"/>
+    <attribute href="platform:/resource/T24WSDL/IBMdefined/org/xmlsoap/schemas/soap/envelope/soapenv11.xsd#//actor;XSDAttributeDeclaration=1" name="actor"/>
+    <attribute href="platform:/resource/T24WSDL/IBMdefined/org/xmlsoap/schemas/soap/envelope/soapenv11.xsd#//encodingStyle;XSDAttributeDeclaration=2" name="encodingStyle"/>
+    <attributeGroup href="platform:/resource/T24WSDL/IBMdefined/org/xmlsoap/schemas/soap/envelope/soapenv11.xsd#//encodingStyle;XSDAttributeGroupDefinition" name="encodingStyle"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/T24WSDL/services_1.xsd" prefix="" targetNamespace="http://temenos.com/PAYMENTSTOPINPUTWS">
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1.xsd#//PAYMENTSTOPINPUTWSType;XSDComplexTypeDefinition" name="PAYMENTSTOPINPUTWSType"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/T24WSDL/services_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16_17_18_19.xsd" prefix="" targetNamespace="http://temenos.com/CBOCARDREGDET">
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16_17_18_19.xsd#//CBOCARDREGDETType;XSDComplexTypeDefinition" name="CBOCARDREGDETType"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/T24WSDL/IBMdefined/soap.xsd" prefix="" targetNamespace="">
+    <element href="platform:/resource/T24WSDL/IBMdefined/soap.xsd#//SOAP_Domain_Msg;XSDElementDeclaration" name="SOAP_Domain_Msg" type="mlib://T24WSDL#/-/complexType{}SOAP_Msg_type"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/IBMdefined/soap.xsd#//MIME_Headers_type;XSDComplexTypeDefinition" name="MIME_Headers_type"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/IBMdefined/soap.xsd#//Attachment_type;XSDComplexTypeDefinition=1" name="Attachment_type"/>
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/IBMdefined/soap.xsd#//SOAP_Msg_type;XSDComplexTypeDefinition=2" name="SOAP_Msg_type"/>
+    <group href="platform:/resource/T24WSDL/IBMdefined/soap.xsd#//MIME_header_fields;XSDModelGroupDefinition" name="MIME_header_fields"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/T24WSDL/services_1_2_3_4_5_6_7_8_9.xsd" prefix="" targetNamespace="http://temenos.com/FUNDSTRANSFERACTRMMT">
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3_4_5_6_7_8_9.xsd#//FUNDSTRANSFERACTRMMTType;XSDComplexTypeDefinition" name="FUNDSTRANSFERACTRMMTType"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/T24WSDL/services_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16_17.xsd" prefix="" targetNamespace="http://temenos.com/EMMTMINISTMTDATE">
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16_17.xsd#//EMMTMINISTMTDATEType;XSDComplexTypeDefinition" name="EMMTMINISTMTDATEType"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/T24WSDL/services_1_2_3_4_5_6_7.xsd" prefix="" targetNamespace="http://temenos.com/CHEQUEISSUE">
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3_4_5_6_7.xsd#//CHEQUEISSUEType;XSDComplexTypeDefinition" name="CHEQUEISSUEType"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/T24WSDL/IBMdefined/org/w3/www/xml/_1998/namespace/xml.xsd" prefix="xml" targetNamespace="http://www.w3.org/XML/1998/namespace">
+    <attribute href="platform:/resource/T24WSDL/IBMdefined/org/w3/www/xml/_1998/namespace/xml.xsd#//lang;XSDAttributeDeclaration" name="lang"/>
+    <attribute href="platform:/resource/T24WSDL/IBMdefined/org/w3/www/xml/_1998/namespace/xml.xsd#//space;XSDAttributeDeclaration=1" name="space"/>
+    <attribute href="platform:/resource/T24WSDL/IBMdefined/org/w3/www/xml/_1998/namespace/xml.xsd#//base;XSDAttributeDeclaration=2" name="base"/>
+    <attributeGroup href="platform:/resource/T24WSDL/IBMdefined/org/w3/www/xml/_1998/namespace/xml.xsd#//specialAttrs;XSDAttributeGroupDefinition" name="specialAttrs"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/T24WSDL/services_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15.xsd" prefix="" targetNamespace="http://temenos.com/EMMTMINISTMT">
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15.xsd#//EMMTMINISTMTType;XSDComplexTypeDefinition" name="EMMTMINISTMTType"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/T24WSDL/services_1_2_3_4_5_6_7_8_9_10_11_12_13_14.xsd" prefix="" targetNamespace="http://temenos.com/EMMTTXNFT">
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3_4_5_6_7_8_9_10_11_12_13_14.xsd#//EMMTTXNFTType;XSDComplexTypeDefinition" name="EMMTTXNFTType"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/T24WSDL/services_1_2_3_4_5.xsd" prefix="" targetNamespace="http://temenos.com/CARDISSUE">
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3_4_5.xsd#//CARDISSUEType;XSDComplexTypeDefinition" name="CARDISSUEType"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/T24WSDL/services_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16_17_18_19_20.xsd" prefix="" targetNamespace="http://jaxb.dev.java.net/array">
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16_17_18_19_20.xsd#//anyTypeArray;XSDComplexTypeDefinition" name="anyTypeArray"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/T24WSDL/services.xsd" prefix="" targetNamespace="http://temenos.com/PAYMENTSTOPREVOKECBOWS">
+    <complexType baseType="mlib://T24WSDL#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/T24WSDL/services.xsd#//PAYMENTSTOPREVOKECBOWSType;XSDComplexTypeDefinition" name="PAYMENTSTOPREVOKECBOWSType"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/T24WSDL/services_1_wsdl.xsd" prefix="tns" targetNamespace="http://temenos.com/MMT">
+    <include name="/T24WSDL/services_1_2_3.xsd" targetNamespace="http://temenos.com/MMT"/>
+    <import name="services_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16_17_18_19_20.xsd" targetNamespace="http://jaxb.dev.java.net/array"/>
+    <import name="services_1_2_3_4_5_6_7_8_9_10_11_12_13.xsd" targetNamespace="http://temenos.com/ACCTBALCTS"/>
+    <import name="services_1_2_3_4_5_6_7_8.xsd" targetNamespace="http://temenos.com/ACCTCOMPANYVIEW"/>
+    <import name="services_1_2_3_4_5_6_7_8_9_10_11_12.xsd" targetNamespace="http://temenos.com/ACCTVIEW"/>
+    <import name="services_1_2_3_4_5.xsd" targetNamespace="http://temenos.com/CARDISSUE"/>
+    <import name="services_1_2_3_4.xsd" targetNamespace="http://temenos.com/CARDISSUEDELWS"/>
+    <import name="services_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16_17_18_19.xsd" targetNamespace="http://temenos.com/CBOCARDREGDET"/>
+    <import name="services_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16_17_18.xsd" targetNamespace="http://temenos.com/CBOCARDREGDETINP2"/>
+    <import name="services_1_2_3_4_5_6_7.xsd" targetNamespace="http://temenos.com/CHEQUEISSUE"/>
+    <import name="services_1_2_3_4_5_6.xsd" targetNamespace="http://temenos.com/CHEQUEISSUEINPUTCBOWS"/>
+    <import name="services_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16.xsd" targetNamespace="http://temenos.com/CHQPRESENTEDWS"/>
+    <import name="services_1_2_3_4_5_6_7_8_9_10_11.xsd" targetNamespace="http://temenos.com/CURRENCYRATES"/>
+    <import name="services_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15.xsd" targetNamespace="http://temenos.com/EMMTMINISTMT"/>
+    <import name="services_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16_17.xsd" targetNamespace="http://temenos.com/EMMTMINISTMTDATE"/>
+    <import name="services_1_2_3_4_5_6_7_8_9_10_11_12_13_14.xsd" targetNamespace="http://temenos.com/EMMTTXNFT"/>
+    <import name="services_1_2_3_4_5_6_7_8_9_10.xsd" targetNamespace="http://temenos.com/FUNDSTRANSFER"/>
+    <import name="services_1_2_3_4_5_6_7_8_9.xsd" targetNamespace="http://temenos.com/FUNDSTRANSFERACTRMMT"/>
+    <import name="services_1_2.xsd" targetNamespace="http://temenos.com/PAYMENTSTOP"/>
+    <import name="services_1.xsd" targetNamespace="http://temenos.com/PAYMENTSTOPINPUTWS"/>
+    <import name="services.xsd" targetNamespace="http://temenos.com/PAYMENTSTOPREVOKECBOWS"/>
+  </XSDCollection>
+</MessageBroker>

@@ -1,0 +1,5 @@
+CREATE FUNCTION initLog4j(
+    IN configure CHARACTER
+) RETURNS BOOLEAN
+LANGUAGE JAVA
+EXTERNAL NAME "com.ibm.broker.IAM3.Log4jNode.initLog4j";

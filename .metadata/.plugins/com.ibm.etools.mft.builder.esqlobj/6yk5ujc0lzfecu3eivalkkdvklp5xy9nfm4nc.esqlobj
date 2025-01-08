@@ -1,0 +1,16 @@
+CREATE COMPUTE MODULE demo 
+ 	create function main() returns 
+ 	boolean
+ 	begin
+ 		call mymethod();
+ 		
+ 	end;
+ 	
+ 	create PROCEDURE mymethod ( )
+ 	BEGIN
+ 		set InputRoot = OutputRoot;
+ 	END;
+ 	
+ 	
+ 	
+ END MODULE;

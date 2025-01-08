@@ -1,0 +1,25 @@
+CREATE DATABASE MODULE second_DB_logging_Database
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		--DECLARE var REFERENCE to Root.MQRFH2.usr ;
+	
+	DECLARE query CHARACTER;
+	     DECLARE Request_id CHARACTER Root.MQRFH2.usr.requestid;
+		DECLARE Payload BLOB Root.XMLNSC.payload;
+	DECLARE Payload_Type CHARACTER Root.MQRFH2.usr.Payload_Type;
+		
+		
+	
+
+--		 declare var1 CHARACTER 'select payload_seq.nextval from dual';
+--		set Environment.data[]=passthru(var1);
+--	   declare varrr1 INTEGER CAST(Environment.data.NEXTVAL as INTEGER);
+
+
+		SET query = 'INSERT INTO PAYLOADLOGGING(Request_Id,Payload,Created_on,Payload_Type,payload_Id) VALUES(?,?,?,?, SEQUENCE1.nextval)';
+		PASSTHRU(query,Request_id,Payload,CURRENT_TIMESTAMP,Payload_Type );
+		
+		RETURN TRUE;
+	END;
+
+END MODULE;

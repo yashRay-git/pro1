@@ -1,0 +1,27 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+
+BEGIN
+
+CALL var();
+
+RETURN TRUE;
+
+END;
+
+CREATE PROCEDURE var() BEGIN
+	
+	DECLARE query CHARACTER;
+	
+	 DECLARE eid  CHARACTER Root.XMLNSC.Employee_Details.EMP_ID;
+	 	 DECLARE ename CHARACTER  Root.XMLNSC.Employee_Details.EMP_NAME;
+	 	 	 	 DECLARE dest CHARACTER  Root.XMLNSC.Employee_Details.DESIGNATION;
+	 	 	 	 	 	 	 	 DECLARE add CHARACTER  Root.XMLNSC.Employee_Details.ADDRESS;
+	 	 	 	 
+	 	 	 	 
+
+ set query= ' INSERT INTO Database.system.EMP1 (EMP_ID, EMP_NAME, DESIGNATION, ADDRESS) VALUES (?,?,?,? SEQUENCE1.nextval)';
+ PASSTHRU(query, eid,ename,dest,add);
+
+	
+END;
+

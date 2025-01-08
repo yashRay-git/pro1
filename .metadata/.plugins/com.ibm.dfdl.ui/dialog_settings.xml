@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="com.ibm.dfdl.launching.testParse">
+		<item key="ParserInputsFromFile" value="false"/>
+		<item key="SerializerInputsFromFile" value="false"/>
+		<item key="Encoding" value="UTF-8"/>
+		<item key="BinaryFloarRep" value="ieee"/>
+		<item key="ByteOrder" value="bigEndian"/>
+		<item key="RuntimeValidation" value="false"/>
+		<list key="ParserInputs">
+		</list>
+		<list key="SerializerInputs">
+		</list>
+	</section>
+</section>

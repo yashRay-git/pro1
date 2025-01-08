@@ -1,0 +1,119 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+	BEGIN
+	
+		-- CALL CopyMessageHeaders();
+		CALL CopyEntireMessage();
+		
+	--  set OutputRoot.XMLNSC.INFO ='INFORMATION HAS BEEN SENT TO THE ANOTHER DB';
+		RETURN FALSE;
+	END;
+
+	CREATE PROCEDURE CopyMessageHeaders() BEGIN
+		DECLARE I INTEGER 1;
+		DECLARE J INTEGER;
+		SET J = CARDINALITY(InputRoot.*[]);
+		WHILE I < J DO
+			SET OutputRoot.*[I] = InputRoot.*[I];
+			SET I = I + 1;
+		END WHILE;
+	END;
+
+	CREATE PROCEDURE CopyEntireMessage() BEGIN
+		
+		DECLARE ref1 REFERENCE TO InputRoot.XMLNSC.Root.Header;
+		set OutputRoot.XMLNSC.Root.Header.requestId=ref1.requestId;
+		set OutputRoot.XMLNSC.Root.Header.channelId=ref1.channelId;
+		set OutputRoot.XMLNSC.Root.Header.requestTime=ref1.requestTime;
+		
+		DECLARE channelid REFERENCE TO ref1.channelId;
+		
+--		DECLARE EName CHARACTER fieldname(InputRoot.XMLNSC.Root.Body.Data.[1]);
+--		DECLARE bookReF REFERENCE TO InputRoot.XMLNSC.Root.Body.Data.{EName}.book[1];
+--		
+		
+		
+		
+		IF FIELDNAME(InputRoot.XMLNSC.Root.Body.Data) IS NULL THEN			
+	    	--SET EName = 'Data';
+             
+            DECLARE EName CHARACTER fieldname(InputRoot.XMLNSC.Root.Body.[1]);
+		    DECLARE bookReF REFERENCE TO InputRoot.XMLNSC.Root.Body.{EName}.book[1];
+		    DECLARE i INTEGER 1;
+		
+		WHILE LASTMOVE(bookReF) DO	
+			IF bookReF.author = 'Corets, Eva' THEN
+				
+				SET OutputRoot.XMLNSC.Root.Body.{EName}.Book[i] = bookReF;
+				set	i =i+1;
+				
+			END IF;
+			MOVE bookReF NEXTSIBLING;
+		END WHILE; 
+		
+		IF channelid ='TPH' THEN
+
+			PROPAGATE TO TERMINAL 'out';					
+
+		ELSEIF channelid= 'FCS' THEN
+
+			PROPAGATE TO TERMINAL 'out1';
+
+		END IF;
+	
+             
+		ELSE
+			
+		DECLARE EName CHARACTER fieldname(InputRoot.XMLNSC.Root.Body.Data.[1]);
+		DECLARE bookReF REFERENCE TO InputRoot.XMLNSC.Root.Body.Data.{EName}.book[1];
+		
+			DECLARE i INTEGER 1;
+		
+		WHILE LASTMOVE(bookReF) DO	
+			IF bookReF.author = 'Corets, Eva' THEN
+				
+				SET OutputRoot.XMLNSC.Root.Body.Data.{EName}.Book[i] = bookReF;
+				set	i =i+1;
+				
+			END IF;
+			MOVE bookReF NEXTSIBLING;
+		END WHILE;
+		
+		IF channelid ='TPH' THEN
+
+			PROPAGATE TO TERMINAL 'out';					
+
+		ELSEIF channelid= 'FCS' THEN
+
+			PROPAGATE TO TERMINAL 'out1';
+
+		END IF;
+
+	END IF;
+		
+		
+		
+--		
+--		
+--		DECLARE i INTEGER 1;
+--		
+--		WHILE LASTMOVE(bookReF) DO	
+--			IF bookReF.author = 'Corets, Eva' THEN
+--				
+--				SET OutputRoot.XMLNSC.Root.Body.Data.{EName}.Book[i] = bookReF;
+--				set	i =i+1;
+--				
+--			END IF;
+--			MOVE bookReF NEXTSIBLING;
+--		END WHILE;
+--		
+--		IF channelid ='TPH' THEN
+--
+--			PROPAGATE TO TERMINAL 'out';					
+--
+--		ELSEIF channelid= 'FCS' THEN
+--
+--			PROPAGATE TO TERMINAL 'out1';
+--
+--		END IF;
+	
+	END;

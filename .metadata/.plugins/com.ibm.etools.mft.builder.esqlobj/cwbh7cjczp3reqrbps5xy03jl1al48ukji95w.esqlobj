@@ -1,0 +1,13 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+	BEGIN
+		IF InputRoot.XMLNSC = 'madhu' THEN
+        -- Set the target label to 'label1'
+        SET OutputLocalEnvironment.Destination.LabelName = 'label1';
+        
+        -- Propagate to the defined label
+        PROPAGATE TO LABEL 'label1';
+    END IF;
+		
+		RETURN TRUE;
+	END;
+

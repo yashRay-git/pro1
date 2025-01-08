@@ -1,0 +1,24 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+
+BEGIN
+
+CALL var();
+
+RETURN TRUE;
+
+END;
+
+CREATE PROCEDURE var() BEGIN
+
+
+
+DECLARE inref REFERENCE TO Root.XMLNSC.Employee_Details;
+		
+		
+		INSERT INTO Database.SYSTEM.EMP1 (EMP_ID, EMP_NAME, DESIGNATION, ADDRESS) VALUES (inref.EMP_ID,inref.EMP_NAME, inref.DESIGNATION,inref.ADDRESS);
+		
+
+PASSTHRU(Insert_data);
+
+END;
+

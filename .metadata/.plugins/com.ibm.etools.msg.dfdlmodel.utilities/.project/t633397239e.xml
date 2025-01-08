@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<MessageBroker name="Delimited_file">
+  <XSDCollection href="platform:/resource/Delimited_file/yash.xsd" prefix="" targetNamespace="">
+    <import name="IBMdefined/CommaSeparatedFormat.xsd" targetNamespace="http://www.ibm.com/dfdl/CommaSeparatedFormat"/>
+    <element href="platform:/resource/Delimited_file/yash.xsd#//yash;XSDElementDeclaration" name="yash"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/Delimited_file/IBMdefined/CommaSeparatedFormat.xsd" prefix="tns" targetNamespace="http://www.ibm.com/dfdl/CommaSeparatedFormat"/>
+</MessageBroker>

@@ -1,0 +1,29 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+BEGIN
+    -- Extract values from the incoming XML message
+    DECLARE empID INTEGER;
+    DECLARE empName CHARACTER;
+
+    -- Assuming the input message is in the format <Root><EmployeeID>...</EmployeeID><EmployeeName>...</EmployeeName></Root>
+    SET empID = FIELDVALUE(InputRoot.XMLNSC.Root); -- Extracting Employee ID from the XML request
+    SET empName = FIELDVALUE(InputRoot.XMLNSC.Root); -- Extracting Employee Name from the XML request
+
+    -- Call the procedure to insert data into the table
+    CALL var(empID, empName);
+
+    RETURN TRUE;
+END;
+
+-- Procedure to insert data into the database table
+CREATE PROCEDURE var(IN empID INTEGER, IN empName CHARACTER)
+BEGIN
+    -- Declare SQL statement as a character string
+    DECLARE Insert_data CHARACTER;
+    
+    -- Prepare the SQL insert statement dynamically
+    SET Insert_data = 'INSERT INTO DATANODE (EMP_ID, EMP_NAME) VALUES(' || empID || ', ''' || empName || ''')';
+
+    -- Execute the SQL statement
+    PASSTHRU(Insert_data);
+END;
+

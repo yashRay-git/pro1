@@ -1,0 +1,21 @@
+CREATE COMPUTE MODULE demo 
+ 	create function main() returns boolean
+ 	begin
+ 		call mymethod();
+ 		return true;
+ 	end;
+ 	
+ 	create PROCEDURE mymethod ( )
+ 	BEGIN
+ 		
+ 		
+ 		CREATE LASTCHILD OF OutputRoot.JSON.Data.emp name 'lastemp' value 'lastempdetails';
+ 		
+ 		
+ 		
+ 		set OutputRoot = InputRoot;
+ 	END;
+ 	
+ 	
+ 	
+ END MODULE;

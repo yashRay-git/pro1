@@ -1,0 +1,33 @@
+CREATE PROCEDURE CopyEntireMessage() 
+BEGIN
+   -- Ensure properties from FILE1 are copied
+   IF EXISTS(InputRoot.ComIbmAggregateReplyBody.FILE1.Properties) THEN
+      SET OutputRoot.Properties = InputRoot.ComIbmAggregateReplyBody.FILE1.Properties;
+   END IF;
+
+   -- Declare references for first <ROLL> from FILE1 and FILE2
+   DECLARE ref REFERENCE TO InputRoot.ComIbmAggregateReplyBody.FILE1.XMLNSC.STUDENT.ROLL[1];
+   DECLARE ref1 REFERENCE TO InputRoot.ComIbmAggregateReplyBody.FILE2.XMLNSC.STUDENT.ROLL[1];
+
+   -- Create XMLNSC domain in OutputRoot
+   CREATE LASTCHILD OF OutputRoot DOMAIN('XMLNSC');
+
+   -- Check if the references are properly initialized and set OutputRoot values
+   IF ref IS NOT NULL THEN
+      SET OutputRoot.XMLNSC.Result.a = ref.name;
+      SET OutputRoot.XMLNSC.Result.b = ref.age;
+   ELSE
+      -- Handle missing data
+      SET OutputRoot.XMLNSC.Result.a = 'No data';
+      SET OutputRoot.XMLNSC.Result.b = 'No data';
+   END IF;
+
+   IF ref1 IS NOT NULL THEN
+      SET OutputRoot.XMLNSC.Result.c = ref1.name;
+      SET OutputRoot.XMLNSC.Result.d = ref1.age;
+   ELSE
+      -- Handle missing data
+      SET OutputRoot.XMLNSC.Result.c = 'No data';
+      SET OutputRoot.XMLNSC.Result.d = 'No data';
+   END IF;
+END;

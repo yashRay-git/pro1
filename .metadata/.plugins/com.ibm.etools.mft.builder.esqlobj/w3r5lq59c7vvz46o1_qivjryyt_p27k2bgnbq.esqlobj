@@ -1,0 +1,11 @@
+CREATE PROCEDURE DBLogging(IN MSGID REFERENCE,IN isomessage REFERENCE,IN REQUEST_TYPE CHARACTER,IN Applicationname CHARACTER,IN outref REFERENCE )
+	 	BEGIN
+	 
+	 		SET outref.Data.RetrievalReferenceNumber_037=MSGID;
+	 		SET outref.Data.REQUEST_TYPE=REQUEST_TYPE;
+	 		 SET outref.Data.ISO_Message=isomessage;
+	 		 SET outref.Data.ApplicationName=Applicationname;
+		 PROPAGATE TO TERMINAL 'out1';
+		 
+	 	
+	 	END;

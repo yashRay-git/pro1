@@ -1,0 +1,94 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+	BEGIN
+		-- CALL CopyMessageHeaders();
+		--CALL CopyEntireMessage();
+		RETURN TRUE;
+	END;
+
+	CREATE PROCEDURE CopyMessageHeaders() BEGIN
+		DECLARE I INTEGER 1;
+		DECLARE J INTEGER;
+		SET J = CARDINALITY(InputRoot.*[]);
+		WHILE I < J DO
+			SET OutputRoot.*[I] = InputRoot.*[I];
+			SET I = I + 1;
+		END WHILE;
+	END;
+
+
+/* 
+
+"Data": {
+    "ResultData": {
+      "MessageArrayTest": [
+        {
+          "Folder": {
+            "FieldA": "Field11Value\\1",
+            "FieldB": "Field12Value\\1"
+          }
+        },
+        {
+          "Folder": {
+            "FieldA": "Field21Value\\2",
+            "FieldB": "Field22Value\\2"
+          }
+        }
+      ]
+    }
+  }
+}  
+
+
+
+I Want below output  So with the help of FOR Loop you can write logic.
+1.
+<Data>
+    <ResultData>
+        <MessageArrayTest>[
+            <Item>
+                <Folder>
+                    <FieldA>Field11Value\1</FieldA>
+                    <FieldB>Field12Value\1</FieldB>
+       
+                   
+                </Folder>
+            </Item>
+            <Item>
+                <Folder>
+                    <FieldA>Field21Value\2</FieldA>
+                    <FieldB>Field22Value\2</FieldB>
+                </Folder>
+            </Item>
+        </MessageArrayTest>
+    </ResultData>
+</Data>
+
+
+	*/
+	CREATE PROCEDURE CopyEntireMessage() 
+BEGIN
+    DECLARE VAR REFERENCE TO InputRoot.JSON.Data.Data.ResultData.MessageArrayTest;	
+    DECLARE I INTEGER 1;
+
+    -- Loop through each item in MessageArrayTest
+    FOR VAR AS InputRoot.JSON.Data.Data.ResultData.MessageArrayTest.Item[] DO
+        -- Create an Item node in the output XML
+        CREATE LASTCHILD OF OutputRoot.XMLNSC.Data.ResultData.MessageArrayTest NAME 'Item';
+        
+        -- Create Folder node for the current Item
+        CREATE LASTCHILD OF OutputRoot.XMLNSC.Data.ResultData.MessageArrayTest.Item[I] NAME 'Folder';
+        
+        -- Populate FieldA and FieldB in the Folder node
+        CREATE LASTCHILD OF OutputRoot.XMLNSC.Data.ResultData.MessageArrayTest.Item[I].Folder NAME 'FieldA' 
+            VALUE VAR.Folder.FieldA;
+        CREATE LASTCHILD OF OutputRoot.XMLNSC.Data.ResultData.MessageArrayTest.Item[I].Folder NAME 'FieldB' 
+            VALUE VAR.Folder.FieldB;
+
+        SET I = I + 1;  -- Increment the counter
+    END FOR;
+
+    -- Uncomment if you need to copy the entire message as well
+    -- SET OutputRoot = InputRoot;
+END;
+	
+	

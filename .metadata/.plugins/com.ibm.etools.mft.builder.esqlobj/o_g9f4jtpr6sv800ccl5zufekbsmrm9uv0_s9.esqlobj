@@ -1,0 +1,4 @@
+CREATE FUNCTION getPolicyProperty( IN policyName CHARACTER, IN propertyName CHARACTER )
+  RETURNS CHARACTER
+  LANGUAGE JAVA
+  EXTERNAL NAME "UDP_PACKEAGE.mypolicyaccessclass.getPolicyProperty";

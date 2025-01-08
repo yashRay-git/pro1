@@ -1,0 +1,45 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+    BEGIN
+        -- Copy the entire message
+        CALL CopyEntireMessage();
+
+        -- Fetch data from the database
+        CALL RetrieveAndStoreData();
+
+        RETURN TRUE;
+    END;
+
+    CREATE PROCEDURE CopyEntireMessage() 
+    BEGIN
+        -- Copy input message to output
+        SET OutputRoot = InputRoot;
+    END;
+
+    CREATE PROCEDURE RetrieveAndStoreData()
+    BEGIN
+        -- Declare variables for database interaction
+        DECLARE dataToStore CHARACTER;
+        
+        -- Example SQL query to retrieve data from the database
+        -- Assuming you have a table 'Person' with columns 'Name', 'Age', 'City'
+        DECLARE cursor CURSOR FOR 
+        SELECT Name || ', ' || Age || AS ConcatenatedData
+        FROM Database.STU;  -- Replace with your database and schema
+
+        -- Open the cursor and fetch data
+        OPEN cursor;
+        FETCH cursor INTO dataToStore;
+        
+        -- Store the fetched data in the shared variable
+        SET sha = dataToStore;
+
+        -- Close the cursor after fetching data
+        CLOSE cursor;
+
+        -- Optional: If you need to insert data into the database, use an INSERT statement
+        -- Example:
+        -- INSERT INTO DatabaseName.SchemaName.Person (Name, Age, City)
+        -- VALUES ('John', 28, 'Miami');
+
+    END;
+

@@ -1,0 +1,37 @@
+
+
+Importing file: C:\Users\Sreenivas Bandaru\Downloads\Workspace3\dbProject1\xe.dbm
+
+
+Processing schema SYSTEM.
+Creating complex type for table AQ$_INTERNET_AGENTS.
+Creating global element for table AQ$_INTERNET_AGENTS.
+Creating complex type for table AQ$_INTERNET_AGENT_PRIVS.
+Creating global element for table AQ$_INTERNET_AGENT_PRIVS.
+Creating complex type for table AQ$_QUEUES.
+Creating global element for table AQ$_QUEUES.
+Creating complex type for table AQ$_QUEUE_TABLES.
+Creating global element for table AQ$_QUEUE_TABLES.
+Creating complex type for table AQ$_SCHEDULES.
+Creating global element for table AQ$_SCHEDULES.
+Creating complex type for table DBLOGING.
+Creating global element for table DBLOGING.
+Creating complex type for table DEF$_AQCALL.
+Creating global element for table DEF$_AQCALL.
+Creating complex type for table DEF$_AQERROR.
+Creating global element for table DEF$_AQERROR.
+Creating complex type for table DEF$_CALLDEST.
+Creating global element for table DEF$_CALLDEST.
+Creating complex type for table DEF$_DEFAULTDEST.
+Creating global element for table DEF$_DEFAULTDEST.
+Creating complex type for table DEF$_DESTINATION.
+Creating global element for table DEF$_DESTINATION.
+Creating complex type for table DEF$_ERROR.
+Creating global element for table DEF$_ERROR.
+Creating complex type for table DEF$_LOB.
+Creating global element for table DEF$_LOB.
+Creating complex type for table DEF$_ORIGIN.
+Creating global element for table DEF$_ORIGIN.
+Creating complex type for table DEF$_PROPAGATOR.
+Creating global element for table DEF$_PROPAGATOR.
+Creating complex type for table DEF$_PUSHED_TRANSACTIONS.

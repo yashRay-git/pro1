@@ -1,0 +1,35 @@
+CREATE COMPUTE MODULE flow_xception_Compute
+    CREATE FUNCTION Main() RETURNS BOOLEAN
+    BEGIN
+        DECLARE xmlParsingError BOOLEAN FALSE;
+
+        -- Check for XML Parsing Error
+        IF InputRoot.Properties.MessageFormat = 'XML' THEN
+            DECLARE validationResult REFERENCE TO InputRoot.XMLNSC;
+            -- Attempt to reference the XMLNSC field to catch any parsing errors
+            IF validationResult IS NULL THEN
+                SET xmlParsingError = TRUE;
+            END IF;
+        END IF;
+
+        -- Handle XML Parsing Error
+        IF xmlParsingError THEN
+            CALL HandleXMLParsingError();
+        ELSE
+            CALL CopyEntireMessage();
+        END IF;
+
+        RETURN TRUE;
+    END;
+
+    CREATE PROCEDURE HandleXMLParsingError() BEGIN
+        -- Handle XML parsing error by setting appropriate error message in output
+        SET OutputRoot.XMLNSC.ErrorDetails.Message = 'An XML parsing error has occurred while parsing the XML document.';
+        SET OutputRoot.XMLNSC.ErrorDetails.Details = 'An invalid XML character (Unicode: 0x7b) was found in the prolog of the document.';
+    END;
+
+    CREATE PROCEDURE CopyEntireMessage() BEGIN
+        -- Copy the entire message
+        SET OutputRoot = InputRoot;
+    END;
+END MODULE;

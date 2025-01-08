@@ -1,0 +1,21 @@
+
+
+Importing file: C:\Users\Sreenivas Bandaru\Downloads\Workspace3\dbProject1\xe.dbm
+
+
+Processing schema SYSTEM.
+Creating complex type for table AQ$_INTERNET_AGENTS.
+Creating global element for table AQ$_INTERNET_AGENTS.
+Creating complex type for table AQ$_INTERNET_AGENT_PRIVS.
+Creating global element for table AQ$_INTERNET_AGENT_PRIVS.
+Creating complex type for table AQ$_QUEUES.
+Creating global element for table AQ$_QUEUES.
+Creating complex type for table AQ$_QUEUE_TABLES.
+Creating global element for table AQ$_QUEUE_TABLES.
+Creating complex type for table AQ$_SCHEDULES.
+Creating global element for table AQ$_SCHEDULES.
+Creating complex type for table DBLOGING.
+Creating global element for table DBLOGING.
+Creating complex type for table DEF$_AQCALL.
+Creating global element for table DEF$_AQCALL.
+Creating complex type for table DEF$_AQERROR.

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<MessageBroker name="05_12_FIXlenth_to_csv">
+  <XSDCollection href="platform:/resource/05_12_FIXlenth_to_csv/IBMdefined/RecordFixLengthFieldFormat.xsd" prefix="tns" targetNamespace="http://www.ibm.com/dfdl/RecordFixLengthFieldFormat"/>
+  <XSDCollection href="platform:/resource/05_12_FIXlenth_to_csv/IBMdefined/CommaSeparatedFormat.xsd" prefix="tns" targetNamespace="http://www.ibm.com/dfdl/CommaSeparatedFormat"/>
+  <XSDCollection href="platform:/resource/05_12_FIXlenth_to_csv/csv.xsd" prefix="" targetNamespace="">
+    <import name="IBMdefined/CommaSeparatedFormat.xsd" targetNamespace="http://www.ibm.com/dfdl/CommaSeparatedFormat"/>
+    <element href="platform:/resource/05_12_FIXlenth_to_csv/csv.xsd#//csv;XSDElementDeclaration" name="csv"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/05_12_FIXlenth_to_csv/fixed.xsd" prefix="" targetNamespace="">
+    <import name="IBMdefined/RecordFixLengthFieldFormat.xsd" targetNamespace="http://www.ibm.com/dfdl/RecordFixLengthFieldFormat"/>
+    <element href="platform:/resource/05_12_FIXlenth_to_csv/fixed.xsd#//fixed;XSDElementDeclaration" name="fixed"/>
+  </XSDCollection>
+</MessageBroker>

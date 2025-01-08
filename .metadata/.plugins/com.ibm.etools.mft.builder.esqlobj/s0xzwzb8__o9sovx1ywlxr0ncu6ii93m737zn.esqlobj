@@ -1,0 +1,29 @@
+CREATE DATABASE MODULE database_node_flow_Database
+
+    CREATE FUNCTION Main() RETURNS BOOLEAN
+    BEGIN
+        -- Call the procedure to insert data into the database
+        CALL InsertEmployeeData();
+        
+        RETURN TRUE;
+    END;
+
+    CREATE PROCEDURE InsertEmployeeData() 
+    BEGIN
+        -- Declare variables to hold the incoming data from the XML request
+        DECLARE empID INTEGER;
+        DECLARE empName CHARACTER;
+
+        -- Extract data from the incoming XML request using InputRoot
+        SET empID = CAST(InputRoot.XMLNSC.Employee.ID AS INTEGER);
+        SET empName = InputRoot.XMLNSC.Employee.Name;
+
+        -- Construct the SQL Insert statement dynamically
+        DECLARE Insert_data CHARACTER;
+        SET Insert_data = 'INSERT INTO DATANODE (EmpID, EmpName) VALUES(' || empID || ', ''' || empName || ''')';
+
+        -- Execute the SQL Insert statement
+        PASSTHRU(Insert_data);
+    END;
+
+END MODULE;

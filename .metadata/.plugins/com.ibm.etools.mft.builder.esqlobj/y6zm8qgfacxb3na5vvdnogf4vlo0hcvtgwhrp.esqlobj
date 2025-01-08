@@ -1,0 +1,69 @@
+CREATE COMPUTE MODULE f_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		-- CALL CopyMessageHeaders();
+		 CALL CopyEntireMessage();
+		RETURN TRUE;
+	END;
+
+	CREATE PROCEDURE CopyMessageHeaders() BEGIN
+		DECLARE I INTEGER 1;
+		DECLARE J INTEGER;
+		SET J = CARDINALITY(InputRoot.*[]);
+		WHILE I < J DO
+			SET OutputRoot.*[I] = InputRoot.*[I];
+			SET I = I + 1;
+		END WHILE;
+	END;
+
+	CREATE PROCEDURE CopyEntireMessage() BEGIN
+		--SET OutputRoot = InputRoot;
+	DECLARE inref REFERENCE TO InputRoot.XMLNSC.EDETAILS.EMP;
+	DECLARE i INTEGER CARDINALITY(inref.EMP[]);
+	
+	-- contains function retrun true if string is present in source 
+	SET OutputRoot.JSON.Data.deatils = CONTAINS(inref, 'ya');
+	
+	 -- IT REPLAC THE CAHRECTOR BASED ON  INDEX POSITION
+	SET OutputRoot.JSON.Data.deatils = OVERLAY(inref PLACING '123' FROM 4  );
+	
+	--substring is used to extract the charector and create  a new string 
+	SET OutputRoot.JSON.Data.deatils = Substring(inref  FROM 1 for 4);
+	
+	SET OutputRoot.JSON.Data.deatils = Substring(inref  FROM 1 for 4) || ' @ ' || Substring(inref from 5);
+	
+	-- REPLACE THE STRING AND RETURN THE UPDATD STRING 
+	SET OutputRoot.JSON.Data.deatils = REPLACE(inref, 'yash', 'Aditya');
+	
+	-- REPACE THE STRING BASED ON THE CAHRECTOR WITH ANYTHING 
+	SET OutputRoot.JSON.Data.deatils = TRANSLATE(inref,'yash','*');
+	
+	--IF INPUT IS TAG IS DIFFRENT FROM COMPUTE TAG THE BY DEFAULTY IT GIVES THIS 
+	SET OutputRoot.JSON.Data.deatils= COALESCE(inref,'EIDIKO!');
+	
+	--LOWER CASE 
+	SET OutputRoot.JSON.Data.deatils= LCASE(inref);
+
+    -- UPER CASE 
+	SET OutputRoot.JSON.Data.deatils= UCASE(inref);
+	 
+	 DECLARE MYBLOB BLOB CAST(inref AS INTEGER );
+	 SET OutputRoot.JSON.Data.deatils=  MYBLOB;
+	
+	
+	
+--  CREATE LASTCHILD OF OutputRoot DOMAIN('XMLNSC') name 'XMLNSC';
+--   CREATE FIELD OutputRoot.XMLNSC.EMP;
+--	DECLARE outref REFERENCE TO OutputRoot.XMLNSC.EMP;
+	--SET outref.emp = infre;
+--   IF (infre ='yash') THEN
+--   	set outref='hello yash';
+--   END IF;
+  
+
+		
+		--DECLARE Test1 REFERENCE TO InputRoot.XMLNSC.Name;
+		--SET OutputRoot.JSON.Data.Result = OVERLAY(Test1 PLACING '123' FROM 2);
+		
+	END;
+END MODULE;

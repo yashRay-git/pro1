@@ -1,0 +1,36 @@
+CREATE DATABASE MODULE database_n0de_flow_Database
+
+CREATE FUNCTION Main() RETURNS BOOLEAN
+BEGIN
+    -- Extract values from the incoming XML message using the correct path
+    DECLARE empID INTEGER;
+    DECLARE empName CHARACTER;
+
+    -- Use reference variables to correctly access XML elements
+    DECLARE refEmpID REFERENCE TO InputRoot.XMLNSC.Root;
+    DECLARE refEmpName REFERENCE TO InputRoot.XMLNSC.*:Root.*:EmployeeName;
+    
+    -- Assign values from XML elements to the declared variables
+    SET empID = CAST(refEmpID AS INTEGER); -- Extract Employee ID from XML request
+    SET empName = CAST(refEmpName AS CHARACTER); -- Extract Employee Name from XML request
+
+    -- Call the procedure to insert data into the table
+    CALL var(empID, empName);
+
+    RETURN TRUE;
+END;
+
+-- Procedure to insert data into the database table
+CREATE PROCEDURE var(IN empID INTEGER, IN empName CHARACTER)
+BEGIN
+    -- Declare SQL statement as a character string
+    DECLARE Insert_data CHARACTER;
+    
+    -- Prepare the SQL insert statement dynamically
+    SET Insert_data = 'INSERT INTO DATANODE (EMP_ID, EMP_NAME) VALUES(' || empID || ', ''' || empName || ''')';
+
+    -- Execute the SQL statement
+    PASSTHRU(Insert_data);
+END;
+
+END MODULE;

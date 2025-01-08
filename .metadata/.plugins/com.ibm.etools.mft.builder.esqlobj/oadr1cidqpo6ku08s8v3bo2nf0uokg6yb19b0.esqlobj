@@ -1,0 +1,18 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+    BEGIN
+        -- Copy the input message to the output message
+        CALL CopyMessageHeaders();
+        CALL CopyEntireMessage();
+        
+        -- Set SOAP Action or any required headers
+        SET OutputRoot.SOAPRequestHeader.SOAPAction = 'YourSOAPAction';
+
+        -- Modify or map the payload if needed
+        -- Example: Mapping HTTP JSON input to SOAP XML output
+        SET OutputRoot.XMLNSC.SOAPEnvelope.SOAPBody.YourSoapRequestElement =
+            InputRoot.XMLNSC.YourHttpRequestElement;
+
+        RETURN TRUE;
+    END;
+
+    CREATE PROCEDURE CopyMessageHeaders()

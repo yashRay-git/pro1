@@ -1,0 +1,19 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+	BEGIN
+		DECLARE result REFERENCE To Root.XMLNSC;
+		
+	
+		IF result.root ='madhu' THEN
+			
+		  RETURN TRUE;
+		 
+		ELSEIF result.root='kumar' THEN 
+			RETURN FALSE;
+			
+			
+		ELSE 
+			RETURN Unknown;
+		END IF;
+		RETURN TRUE;
+	END;
+

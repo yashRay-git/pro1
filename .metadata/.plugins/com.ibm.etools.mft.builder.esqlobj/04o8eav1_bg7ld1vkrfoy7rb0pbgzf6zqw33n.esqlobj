@@ -1,0 +1,53 @@
+CREATE COMPUTE MODULE flow_log_Compute
+    CREATE FUNCTION Main() RETURNS BOOLEAN
+    BEGIN
+        -- CALL CopyMessageHeaders();
+        CALL CopyEntireMessage();
+        RETURN TRUE;
+    END;
+
+    CREATE PROCEDURE CopyMessageHeaders() BEGIN
+        DECLARE I INTEGER 1;
+        DECLARE J INTEGER;
+        SET J = CARDINALITY(InputRoot.*[]);
+        WHILE I < J DO
+            SET OutputRoot.*[I] = InputRoot.*[I];
+            SET I = I + 1;
+        END WHILE;
+    END;
+
+    CREATE PROCEDURE CopyEntireMessage() BEGIN
+        -- Convert the date from XML to BLOB and then to character string
+        DECLARE inref REFERENCE TO InputRoot.XMLNSC; -- Replace 'DateElement' with your actual XML date field
+        DECLARE mychar,mychar1 CHARACTER;
+        DECLARE dateBlob BLOB;
+        DECLARE dateblob2 BLOB;
+        
+        -- Convert date to BLOB
+        SET dateBlob = ASBITSTREAM(inref); 
+
+        -- Convert BLOB to character string
+       
+        SET mychar = CAST(dateBlob AS CHAR CCSID InputRoot.Properties.CodedCharSetId);
+
+        -- Use the converted date string in the message
+  
+         CALL mydata(ApplicationLabel,MessageFlowLabel, CURRENT_TIMESTAMP,mychar,'channel_request');
+         
+        -- Copy the rest of the message from XML to JSON
+        SET OutputRoot.JSON.Data.Invoice = inref.Invoice;
+      
+        -------------------------------------------
+        
+        
+        
+         DECLARE inref2 REFERENCE TO InputRoot.JSON.Data.Invoice;
+           SET mychar1 = CAST(dateBlob AS CHAR CCSID InputRoot.Properties.CodedCharSetId);
+        
+         CALL mydata(ApplicationLabel,MessageFlowLabel, CURRENT_TIMESTAMP,mychar1,'Host_request');
+        
+        
+        
+        
+    END;
+END MODULE;

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<MessageBroker name="File_Delimiter">
+  <XSDCollection href="platform:/resource/File_Delimiter/IBMdefined/CommaSeparatedFormat.xsd" prefix="tns" targetNamespace="http://www.ibm.com/dfdl/CommaSeparatedFormat"/>
+  <XSDCollection href="platform:/resource/File_Delimiter/Simple_Delimited/Simple_Delimited.xsd" prefix="" targetNamespace="">
+    <import name="IBMdefined/CommaSeparatedFormat.xsd" targetNamespace="http://www.ibm.com/dfdl/CommaSeparatedFormat"/>
+    <element href="platform:/resource/File_Delimiter/Simple_Delimited/Simple_Delimited.xsd#//Simple_Delimited;XSDElementDeclaration" name="Simple_Delimited"/>
+  </XSDCollection>
+</MessageBroker>

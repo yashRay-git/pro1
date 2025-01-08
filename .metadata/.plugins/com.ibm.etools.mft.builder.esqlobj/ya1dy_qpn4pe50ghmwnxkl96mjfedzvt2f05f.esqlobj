@@ -1,0 +1,17 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+	BEGIN
+		call insertt();
+		RETURN TRUE;
+	END;
+   
+   CREATE PROCEDURE insertt ( )
+   BEGIN
+   	
+ DECLARE eid  CHARACTER Root.XMLNSC.Employee_Details.EMP_ID;
+	 	 DECLARE ename CHARACTER  Root.XMLNSC.Employee_Details.EMP_NAME;
+	 	 	 	 DECLARE dest CHARACTER  Root.XMLNSC.Employee_Details.DESIGNATION;
+	 	 	 	 	 	 	 	 DECLARE add CHARACTER  Root.XMLNSC.Employee_Details.ADDRESS;   	 
+   	 insert into demo (id,name,age) VALUES (inref.id,inref.name, inref.age );
+   	 
+   END;
+   
