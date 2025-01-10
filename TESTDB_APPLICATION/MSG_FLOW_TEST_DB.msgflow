@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ComIbmCompute.msgnode="ComIbmCompute.msgnode" xmlns:ComIbmWSInput.msgnode="ComIbmWSInput.msgnode" xmlns:ComIbmWSReply.msgnode="ComIbmWSReply.msgnode" xmlns:ComIbmWSRequest.msgnode="ComIbmWSRequest.msgnode" xmlns:ExceptionSUBFLOWS_DBCHANNAL_RESPON.subflow="ExceptionSUBFLOWS/DBCHANNAL_RESPON.subflow" xmlns:ExceptionSUBFLOWS_DBHOST_REQ.subflow="ExceptionSUBFLOWS/DBHOST_REQ.subflow" xmlns:ExceptionSUBFLOWS_DBLOGING.subflow="ExceptionSUBFLOWS/DBLOGING.subflow"
-    xmlns:ExceptionSUBFLOWS_EXCEPTION_HANDLING.subflow="ExceptionSUBFLOWS/EXCEPTION_HANDLING.subflow" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eflow="http://www.ibm.com/wbi/2005/eflow" xmlns:utility="http://www.ibm.com/wbi/2005/eflow_utility" nsURI="MSG_FLOW_TEST_DB.msgflow" nsPrefix="MSG_FLOW_TEST_DB.msgflow">
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ComIbmCompute.msgnode="ComIbmCompute.msgnode" xmlns:ComIbmSOAPInput.msgnode="ComIbmSOAPInput.msgnode" xmlns:ComIbmWSInput.msgnode="ComIbmWSInput.msgnode" xmlns:ComIbmWSReply.msgnode="ComIbmWSReply.msgnode" xmlns:ComIbmWSRequest.msgnode="ComIbmWSRequest.msgnode" xmlns:ExceptionSUBFLOWS_DBCHANNAL_RESPON.subflow="ExceptionSUBFLOWS/DBCHANNAL_RESPON.subflow" xmlns:ExceptionSUBFLOWS_DBHOST_REQ.subflow="ExceptionSUBFLOWS/DBHOST_REQ.subflow"
+    xmlns:ExceptionSUBFLOWS_DBLOGING.subflow="ExceptionSUBFLOWS/DBLOGING.subflow" xmlns:ExceptionSUBFLOWS_EXCEPTION_HANDLING.subflow="ExceptionSUBFLOWS/EXCEPTION_HANDLING.subflow" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eflow="http://www.ibm.com/wbi/2005/eflow" xmlns:utility="http://www.ibm.com/wbi/2005/eflow_utility" nsURI="MSG_FLOW_TEST_DB.msgflow" nsPrefix="MSG_FLOW_TEST_DB.msgflow">
   <eClassifiers xmi:type="eflow:FCMComposite" name="FCMComposite_1" nodeLayoutStyle="SQUARE">
     <eSuperTypes href="http://www.ibm.com/wbi/2005/eflow#//FCMBlock"/>
     <translation xmi:type="utility:TranslatableString" key="MSG_FLOW_TEST_DB" bundleName="MSG_FLOW_TEST_DB" pluginId="TESTDB_APPLICATION"/>
@@ -30,6 +30,9 @@
       </nodes>
       <nodes xmi:type="ExceptionSUBFLOWS_DBCHANNAL_RESPON.subflow:FCMComposite_1" xmi:id="FCMComposite_1_8" location="930,50">
         <translation xmi:type="utility:ConstantString" string="DBCHANNAL_RESPON"/>
+      </nodes>
+      <nodes xmi:type="ComIbmSOAPInput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_9" location="209,279" useHTTPTransport="true">
+        <translation xmi:type="utility:ConstantString" string="SOAP Input"/>
       </nodes>
       <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_1" targetNode="FCMComposite_1_4" sourceNode="FCMComposite_1_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Input"/>
       <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_5" targetNode="FCMComposite_1_2" sourceNode="FCMComposite_1_5" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.in"/>

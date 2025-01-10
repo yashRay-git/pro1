@@ -2975,3 +2975,112 @@ BIP9326I<<The source '07_01_2025_USER_DEFINE_APP_POLICYproject.generated.bar' ha
 07_01_2025_USER_DEFINE_APP_POLICY>>b>>eg>>SUCCESS>>1736256805975
 BIP9332I<<Application '07_01_2025_USER_DEFINE_APP_POLICY' has been changed successfully. <<1736256805975
 BIP9326I<<The source '07_01_2025_USER_DEFINE_APP_POLICYproject.generated.bar' has been successfully deployed. <<1736256805975
+MiniStatement_App>>b>>eg>>WARNING>>1736343831310
+BIP9320E<<Message Flow 'MiniStatement_main_flow', 'MiniStatement_main_flow' encountered a failure and could not start. <<1736343831310
+BIP2211E<<Invalid configuration attribute value 'htttp://localhost;7804/T24', is not valid for target attribute 'URLSpecifier', object 'HTTP Request'; valid values are 'http://host[:port][/path]'. <<1736343831310
+BIP9333W<<Application 'MiniStatement_App' has been created but contains errors which has prevented some resources from starting. <<1736343831310
+BIP1096E<<The source 'MiniStatement_Appproject.generated.bar' has been deployed but there were one or more failures which may mean the deployed resources will be unable to execute. <<1736343831310
+MiniStatement_App>>b>>eg>>WARNING>>1736344201925
+BIP9320E<<Message Flow 'MiniStatement_main_flow', 'MiniStatement_main_flow' encountered a failure and could not start. <<1736344201925
+BIP2211E<<Invalid configuration attribute value 'htttp://localhost:7804/T24', is not valid for target attribute 'URLSpecifier', object 'HTTP Request'; valid values are 'http://host[:port][/path]'. <<1736344201925
+BIP9333W<<Application 'MiniStatement_App' has been changed but contains errors which has prevented some resources from starting. <<1736344201925
+BIP1096E<<The source 'MiniStatement_Appproject.generated.bar' has been deployed but there were one or more failures which may mean the deployed resources will be unable to execute. <<1736344201925
+MiniStatement_App>>b>>eg>>SUCCESS>>1736344274487
+BIP9332I<<Application 'MiniStatement_App' has been changed successfully. <<1736344274487
+BIP9326I<<The source 'MiniStatement_Appproject.generated.bar' has been successfully deployed. <<1736344274487
+MiniStatement_App>>b>>eg>>SUCCESS>>1736346629687
+BIP9332I<<Application 'MiniStatement_App' has been changed successfully. <<1736346629687
+BIP9326I<<The source 'MiniStatement_Appproject.generated.bar' has been successfully deployed. <<1736346629687
+14_12_file_properties>>b2>>EG12>>SUCCESS>>1736404482398
+BIP9332I<<Application '14_12_file_properties' has been created successfully. <<1736404482398
+BIP9326I<<The source '14_12_file_propertiesproject.generated.bar' has been successfully deployed. <<1736404482398
+14_12_file_properties>>b2>>EG12>>SUCCESS>>1736404879571
+BIP9332I<<Application '14_12_file_properties' has been changed successfully. <<1736404879571
+BIP9326I<<The source '14_12_file_propertiesproject.generated.bar' has been successfully deployed. <<1736404879571
+14_12_file_properties>>b2>>EG12>>SUCCESS>>1736405038554
+BIP9332I<<Application '14_12_file_properties' has been changed successfully. <<1736405038554
+BIP9326I<<The source '14_12_file_propertiesproject.generated.bar' has been successfully deployed. <<1736405038554
+14_12_file_properties>>b2>>EG12>>SUCCESS>>1736406511837
+BIP9332I<<Application '14_12_file_properties' has been changed successfully. <<1736406511837
+BIP9326I<<The source '14_12_file_propertiesproject.generated.bar' has been successfully deployed. <<1736406511837
+14_12_file_properties>>b2>>EG12>>SUCCESS>>1736410846805
+BIP9332I<<Application '14_12_file_properties' has been changed successfully. <<1736410846805
+BIP9326I<<The source '14_12_file_propertiesproject.generated.bar' has been successfully deployed. <<1736410846805
+14_12_file_properties>>b2>>EG12>>SUCCESS>>1736411604977
+BIP9332I<<Application '14_12_file_properties' has been created successfully. <<1736411604977
+BIP9326I<<The source '14_12_file_propertiesproject.generated.bar' has been successfully deployed. <<1736411604977
+14_12_file_properties>>b2>>EG12>>SUCCESS>>1736412042665
+BIP9332I<<Application '14_12_file_properties' has been changed successfully. <<1736412042665
+BIP9326I<<The source '14_12_file_propertiesproject.generated.bar' has been successfully deployed. <<1736412042665
+14_12_file_properties>>b2>>EG12>>SUCCESS>>1736412353542
+BIP9332I<<Application '14_12_file_properties' has been changed successfully. <<1736412353542
+BIP9326I<<The source '14_12_file_propertiesproject.generated.bar' has been successfully deployed. <<1736412353542
+14_12_file_properties>>b>>eg>>SUCCESS>>1736412533367
+BIP9332I<<Application '14_12_file_properties' has been created successfully. <<1736412533367
+BIP9326I<<The source '14_12_file_propertiesproject.generated.bar' has been successfully deployed. <<1736412533367
+09_1_2025_soap_enable_wsdl>>b>>eg>>SUCCESS>>1736426430122
+BIP9332I<<Application '09_1_2025_soap_enable_wsdl' has been created successfully. <<1736426430122
+BIP9326I<<The source '09_1_2025_soap_enable_wsdlproject.generated.bar' has been successfully deployed. <<1736426430122
+09_1_2025_soap_enable_wsdl>>b>>eg>>SUCCESS>>1736426470857
+BIP9332I<<Application '09_1_2025_soap_enable_wsdl' has been changed successfully. <<1736426470857
+BIP9326I<<The source '09_1_2025_soap_enable_wsdlproject.generated.bar' has been successfully deployed. <<1736426470857
+09_1_2025_soap_enable_wsdl>>b>>eg>>SUCCESS>>1736426672114
+BIP9332I<<Application '09_1_2025_soap_enable_wsdl' has been changed successfully. <<1736426672114
+BIP9326I<<The source '09_1_2025_soap_enable_wsdlproject.generated.bar' has been successfully deployed. <<1736426672114
+09_1_2025_soap_enable_wsdl>>b>>eg>>SUCCESS>>1736426780643
+BIP9332I<<Application '09_1_2025_soap_enable_wsdl' has been changed successfully. <<1736426780643
+BIP9326I<<The source '09_1_2025_soap_enable_wsdlproject.generated.bar' has been successfully deployed. <<1736426780643
+09_1_2025_soap_enable_wsdl>>b>>eg>>SUCCESS>>1736427061619
+BIP9332I<<Application '09_1_2025_soap_enable_wsdl' has been changed successfully. <<1736427061619
+BIP9326I<<The source '09_1_2025_soap_enable_wsdlproject.generated.bar' has been successfully deployed. <<1736427061619
+09_1_2025_soap_enable_wsdl>>b>>eg>>SUCCESS>>1736427113925
+BIP9332I<<Application '09_1_2025_soap_enable_wsdl' has been changed successfully. <<1736427113925
+BIP9326I<<The source '09_1_2025_soap_enable_wsdlproject.generated.bar' has been successfully deployed. <<1736427113925
+09_1_2025_soap_enable_wsdl>>b>>eg>>SUCCESS>>1736427170523
+BIP9332I<<Application '09_1_2025_soap_enable_wsdl' has been changed successfully. <<1736427170523
+BIP9326I<<The source '09_1_2025_soap_enable_wsdlproject.generated.bar' has been successfully deployed. <<1736427170523
+09_1_2025_soap_enable_wsdl>>b>>eg>>SUCCESS>>1736427254014
+BIP9332I<<Application '09_1_2025_soap_enable_wsdl' has been changed successfully. <<1736427254014
+BIP9326I<<The source '09_1_2025_soap_enable_wsdlproject.generated.bar' has been successfully deployed. <<1736427254014
+09_1_2025_soap_enable_wsdl>>b>>eg>>SUCCESS>>1736427675231
+BIP9332I<<Application '09_1_2025_soap_enable_wsdl' has been changed successfully. <<1736427675231
+BIP9326I<<The source '09_1_2025_soap_enable_wsdlproject.generated.bar' has been successfully deployed. <<1736427675231
+09_1_2025_soap_enable_wsdl>>b>>eg>>SUCCESS>>1736427746433
+BIP9332I<<Application '09_1_2025_soap_enable_wsdl' has been changed successfully. <<1736427746433
+BIP9326I<<The source '09_1_2025_soap_enable_wsdlproject.generated.bar' has been successfully deployed. <<1736427746433
+09_1_2025_soap_enable_wsdl>>b>>eg>>SUCCESS>>1736427931152
+BIP9332I<<Application '09_1_2025_soap_enable_wsdl' has been changed successfully. <<1736427931152
+BIP9326I<<The source '09_1_2025_soap_enable_wsdlproject.generated.bar' has been successfully deployed. <<1736427931152
+09_1_2025_soap_enable_wsdl>>b>>eg>>SUCCESS>>1736428622458
+BIP9332I<<Application '09_1_2025_soap_enable_wsdl' has been changed successfully. <<1736428622458
+BIP9326I<<The source '09_1_2025_soap_enable_wsdlproject.generated.bar' has been successfully deployed. <<1736428622458
+09_1_2025_soap_enable_wsdl>>b>>eg>>SUCCESS>>1736428771928
+BIP9332I<<Application '09_1_2025_soap_enable_wsdl' has been changed successfully. <<1736428771928
+BIP9326I<<The source '09_1_2025_soap_enable_wsdlproject.generated.bar' has been successfully deployed. <<1736428771928
+09_1_2025_soap_enable_wsdl>>b>>eg>>SUCCESS>>1736429321689
+BIP9332I<<Application '09_1_2025_soap_enable_wsdl' has been changed successfully. <<1736429321689
+BIP9326I<<The source '09_1_2025_soap_enable_wsdlproject.generated.bar' has been successfully deployed. <<1736429321689
+10_01_2025_Remote_Collable_flow>>b>>eg>>SUCCESS>>1736487713689
+BIP9332I<<Application '10_01_2025_Remote_Collable_flow' has been created successfully. <<1736487713689
+BIP9326I<<The source '10_01_2025_Remote_Collable_flowproject.generated.bar' has been successfully deployed. <<1736487713689
+10_01_2025_Remote_Collable_flow>>b>>eg>>SUCCESS>>1736488281983
+BIP9332I<<Application '10_01_2025_Remote_Collable_flow' has been created successfully. <<1736488281983
+BIP9326I<<The source '10_01_2025_Remote_Collable_flowproject.generated.bar' has been successfully deployed. <<1736488281983
+10_01_2025_Remote_Collable_flow>>b>>eg>>SUCCESS>>1736488746699
+BIP9332I<<Application '10_01_2025_Remote_Collable_flow' has been created successfully. <<1736488746699
+BIP9326I<<The source '10_01_2025_Remote_Collable_flowproject.generated.bar' has been successfully deployed. <<1736488746699
+09_1_2025_soap_enable_wsdl>>b>>eg>>SUCCESS>>1736489789918
+BIP9332I<<Application '09_1_2025_soap_enable_wsdl' has been created successfully. <<1736489789918
+BIP9326I<<The source '09_1_2025_soap_enable_wsdlproject.generated.bar' has been successfully deployed. <<1736489789918
+10_01_2025_Remote_Collable_flow>>b>>eg>>SUCCESS>>1736489815514
+BIP9332I<<Application '10_01_2025_Remote_Collable_flow' has been created successfully. <<1736489815514
+BIP9326I<<The source '10_01_2025_Remote_Collable_flowproject.generated.bar' has been successfully deployed. <<1736489815514
+CALLABLE_NODES>>b2>>EG12>>SUCCESS>>1736492973397
+BIP9332I<<Application 'CALLABLE_NODES' has been created successfully. <<1736492973397
+BIP9326I<<The source 'CALLABLE_NODESproject.generated.bar' has been successfully deployed. <<1736492973397
+10_01_2025_Remote_Collable_flow>>b>>eg>>SUCCESS>>1736493126464
+BIP9332I<<Application '10_01_2025_Remote_Collable_flow' has been changed successfully. <<1736493126464
+BIP9326I<<The source '10_01_2025_Remote_Collable_flowproject.generated.bar' has been successfully deployed. <<1736493126464
+10_01_2025_Remote_Collable_flow>>b>>eg>>SUCCESS>>1736493185749
+BIP9332I<<Application '10_01_2025_Remote_Collable_flow' has been changed successfully. <<1736493185749
+BIP9326I<<The source '10_01_2025_Remote_Collable_flowproject.generated.bar' has been successfully deployed. <<1736493185749
